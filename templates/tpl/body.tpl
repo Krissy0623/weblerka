@@ -14,7 +14,7 @@
     </div>
 </header>
 <!-- About Section -->
-<section class="page-section bg-warning" id="about">
+<section class="page-section" style="background-color: #f4a33a;" id="about">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
@@ -30,35 +30,35 @@
 </section>
 
 <!-- Services Section -->
-<section class="page-section" id="services">
+<section class="page-section"  style="background-color: #e4e4e4;" id="services">
     <div class="container">
         <h2 class="text-center mt-0">服務項目</h2>
         <hr class="divider my-4">
         <div class="row">
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="mt-5">
-                    <i class="fas fa-4x fa-comments text-warning mb-4"></i>
+                    <i class="fas fa-4x fa-comments text-primary mb-4"></i>
                     <h3 class="h4 mb-2">動物溝通</h3>
                     <p class="text-muted mb-0">免費體驗 / 付費服務</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="mt-5">
-                    <i class="fas fa-4x fa-search-location text-warning mb-4"></i>
+                    <i class="fas fa-4x fa-search-location text-primary mb-4"></i>
                     <h3 class="h4 mb-2">失蹤協尋</h3>
                     <p class="text-muted mb-0">（尚未開放）</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="mt-5">
-                    <i class="fab fa-4x fa-creative-commons-sampling text-warning mb-4"></i>
+                    <i class="fab fa-4x fa-creative-commons-sampling text-primary mb-4"></i>
                     <h3 class="h4 mb-2">離世溝通</h3>
                     <p class="text-muted mb-0">（尚未開放）</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="mt-5">
-                    <i class="fas fa-4x  fa-hands text-warning mb-4"></i>
+                    <i class="fas fa-4x  fa-hands text-primary mb-4"></i>
                     <h3 class="h4 mb-2">筋絡保養</h3>
                     <p class="text-muted mb-0">（尚未開放）</p>
                 </div>
@@ -72,8 +72,8 @@
     <div class="container-fluid p-0">
         <div class="row no-gutters">
         <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="<{$xoImgUrl}>creative/img/portfolio/fullsize/1.jpg">
-                <img class="img-fluid" src="<{$xoImgUrl}>creative/img/portfolio/thumbnails/1.jpg" alt="">
+            <a class="portfolio-box" href="<{$xoImgUrl}>creative/img/portfolio/fullsize/18.jpg">
+                <img class="img-fluid" src="<{$xoImgUrl}>creative/img/portfolio/thumbnails/18.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
                         Category
@@ -85,8 +85,8 @@
             </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="<{$xoImgUrl}>creative/img/portfolio/fullsize/2.jpg">
-                <img class="img-fluid" src="<{$xoImgUrl}>creative/img/portfolio/thumbnails/2.jpg" alt="">
+            <a class="portfolio-box" href="<{$xoImgUrl}>creative/img/portfolio/fullsize/19.jpg">
+                <img class="img-fluid" src="<{$xoImgUrl}>creative/img/portfolio/thumbnails/19.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
                         Category
@@ -98,8 +98,8 @@
             </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="<{$xoImgUrl}>creative/img/portfolio/fullsize/3.jpg">
-                <img class="img-fluid" src="<{$xoImgUrl}>creative/img/portfolio/thumbnails/3.jpg" alt="">
+            <a class="portfolio-box" href="<{$xoImgUrl}>creative/img/portfolio/fullsize/20.jpg">
+                <img class="img-fluid" src="<{$xoImgUrl}>creative/img/portfolio/thumbnails/20.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
                         Category
@@ -111,8 +111,8 @@
             </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="<{$xoImgUrl}>creative/img/portfolio/fullsize/4.jpg">
-                <img class="img-fluid" src="<{$xoImgUrl}>creative/img/portfolio/thumbnails/4.jpg" alt="">
+            <a class="portfolio-box" href="<{$xoImgUrl}>creative/img/portfolio/fullsize/21.jpg">
+                <img class="img-fluid" src="<{$xoImgUrl}>creative/img/portfolio/thumbnails/21.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
                         Category
@@ -124,8 +124,8 @@
             </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="<{$xoImgUrl}>creative/img/portfolio/fullsize/5.jpg">
-                <img class="img-fluid" src="<{$xoImgUrl}>creative/img/portfolio/thumbnails/5.jpg" alt="">
+            <a class="portfolio-box" href="<{$xoImgUrl}>creative/img/portfolio/fullsize/22.jpg">
+                <img class="img-fluid" src="<{$xoImgUrl}>creative/img/portfolio/thumbnails/22.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
                         Category

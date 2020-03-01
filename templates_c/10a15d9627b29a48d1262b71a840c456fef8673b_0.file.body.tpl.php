@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-02-29 15:25:42
+/* Smarty version 3.1.34-dev-7, created on 2020-03-01 15:10:58
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\body.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5a74661fcaf2_98978115',
+  'unifunc' => 'content_5e5bc27288f8e8_47952359',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10a15d9627b29a48d1262b71a840c456fef8673b' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\body.tpl',
-      1 => 1582986295,
+      1 => 1583071855,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e5a74661fcaf2_98978115 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5bc27288f8e8_47952359 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Masthead -->
 <header class="masthead">
     <div class="container h-100">
@@ -37,7 +37,7 @@ function content_5e5a74661fcaf2_98978115 (Smarty_Internal_Template $_smarty_tpl)
     </div>
 </header>
 <!-- About Section -->
-<section class="page-section bg-warning" id="about">
+<section class="page-section" style="background-color: #f4a33a;" id="about">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
@@ -53,35 +53,35 @@ function content_5e5a74661fcaf2_98978115 (Smarty_Internal_Template $_smarty_tpl)
 </section>
 
 <!-- Services Section -->
-<section class="page-section" id="services">
+<section class="page-section"  style="background-color: #e4e4e4;" id="services">
     <div class="container">
         <h2 class="text-center mt-0">服務項目</h2>
         <hr class="divider my-4">
         <div class="row">
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="mt-5">
-                    <i class="fas fa-4x fa-comments text-warning mb-4"></i>
+                    <i class="fas fa-4x fa-comments text-primary mb-4"></i>
                     <h3 class="h4 mb-2">動物溝通</h3>
                     <p class="text-muted mb-0">免費體驗 / 付費服務</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="mt-5">
-                    <i class="fas fa-4x fa-search-location text-warning mb-4"></i>
+                    <i class="fas fa-4x fa-search-location text-primary mb-4"></i>
                     <h3 class="h4 mb-2">失蹤協尋</h3>
                     <p class="text-muted mb-0">（尚未開放）</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="mt-5">
-                    <i class="fab fa-4x fa-creative-commons-sampling text-warning mb-4"></i>
+                    <i class="fab fa-4x fa-creative-commons-sampling text-primary mb-4"></i>
                     <h3 class="h4 mb-2">離世溝通</h3>
                     <p class="text-muted mb-0">（尚未開放）</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="mt-5">
-                    <i class="fas fa-4x  fa-hands text-warning mb-4"></i>
+                    <i class="fas fa-4x  fa-hands text-primary mb-4"></i>
                     <h3 class="h4 mb-2">筋絡保養</h3>
                     <p class="text-muted mb-0">（尚未開放）</p>
                 </div>
@@ -96,9 +96,9 @@ function content_5e5a74661fcaf2_98978115 (Smarty_Internal_Template $_smarty_tpl)
         <div class="row no-gutters">
         <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/fullsize/1.jpg">
+creative/img/portfolio/fullsize/18.jpg">
                 <img class="img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/thumbnails/1.jpg" alt="">
+creative/img/portfolio/thumbnails/18.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
                         Category
@@ -111,9 +111,9 @@ creative/img/portfolio/thumbnails/1.jpg" alt="">
         </div>
         <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/fullsize/2.jpg">
+creative/img/portfolio/fullsize/19.jpg">
                 <img class="img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/thumbnails/2.jpg" alt="">
+creative/img/portfolio/thumbnails/19.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
                         Category
@@ -126,9 +126,9 @@ creative/img/portfolio/thumbnails/2.jpg" alt="">
         </div>
         <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/fullsize/3.jpg">
+creative/img/portfolio/fullsize/20.jpg">
                 <img class="img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/thumbnails/3.jpg" alt="">
+creative/img/portfolio/thumbnails/20.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
                         Category
@@ -141,9 +141,9 @@ creative/img/portfolio/thumbnails/3.jpg" alt="">
         </div>
         <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/fullsize/4.jpg">
+creative/img/portfolio/fullsize/21.jpg">
                 <img class="img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/thumbnails/4.jpg" alt="">
+creative/img/portfolio/thumbnails/21.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
                         Category
@@ -156,9 +156,9 @@ creative/img/portfolio/thumbnails/4.jpg" alt="">
         </div>
         <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/fullsize/5.jpg">
+creative/img/portfolio/fullsize/22.jpg">
                 <img class="img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/thumbnails/5.jpg" alt="">
+creative/img/portfolio/thumbnails/22.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
                         Category
