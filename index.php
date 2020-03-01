@@ -44,9 +44,9 @@ switch ($op){
 $smarty->assign("WEB", $WEB);
 $smarty->assign("op", $op); //送去樣板就會顯示,但要下指令<{$op}>
 
-$smarty->assign("a0", "關於樂咖桃");
+$smarty->assign("a0", "關於我們");
 $smarty->assign("a1", "服務項目");
-$smarty->assign("a2", "作品集");
+$smarty->assign("a2", "寶貝畫畫");
 $smarty->assign("a3", "線上預約");
 $smarty->assign("a4", "聯絡我們");
 

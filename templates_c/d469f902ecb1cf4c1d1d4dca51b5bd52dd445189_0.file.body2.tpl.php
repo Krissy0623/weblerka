@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-02-29 15:25:42
-  from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\body.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-02-29 15:15:26
+  from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\body2.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5a74661fcaf2_98978115',
+  'unifunc' => 'content_5e5a71fea090b7_61782444',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '10a15d9627b29a48d1262b71a840c456fef8673b' => 
+    'd469f902ecb1cf4c1d1d4dca51b5bd52dd445189' => 
     array (
-      0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\body.tpl',
-      1 => 1582986295,
+      0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\body2.tpl',
+      1 => 1582985724,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e5a74661fcaf2_98978115 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5a71fea090b7_61782444 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Masthead -->
 <header class="masthead">
     <div class="container h-100">

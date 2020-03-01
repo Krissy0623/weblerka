@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-02-18 15:51:58
+/* Smarty version 3.1.34-dev-7, created on 2020-02-29 15:29:50
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\head.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e4bfa0e9c8e07_33580267',
+  'unifunc' => 'content_5e5a755edd4f86_60269287',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '58e7e28752ce5a5c26fd1f8da57f5398ef503147' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\head.tpl',
-      1 => 1582029209,
+      1 => 1582986530,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e4bfa0e9c8e07_33580267 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5a755edd4f86_60269287 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
     #mainNav {
-      background-color: rgba(219, 217, 74, .6);
+      background-color: rgba(255, 193, 7, .7);
     }
 </style>
 

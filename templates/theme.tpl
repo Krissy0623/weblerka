@@ -22,7 +22,7 @@
 	<link href="<{$xoImgUrl}>creative/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
 	<!-- Theme CSS - Includes Bootstrap -->
-	<link href="<{$xoImgUrl}>creative/css/creative.min.css" rel="stylesheet">
+	<link href="<{$xoImgUrl}>creative/css/creative.css" rel="stylesheet">
 	<{* 把head_js.tpl引進來 *}>
 	<{include file="tpl/head_js.tpl"}>
 
@@ -30,26 +30,29 @@
 
 <body id="page-top">
 	<{* 轉向樣版連結 *}>
-  	<{include file="tpl/redirect.tpl"}>
+  		<{include file="tpl/redirect.tpl"}>
 
 	<{* 把head.tpl引進來 *}>
-	<{include file="tpl/head.tpl"}>
+		<{include file="tpl/head.tpl"}>
 
+	<{* 聯絡我們 *}>
 	<{if $op == "contact_form"}>
 		<{include file="tpl/contact_form.tpl"}>
 	<{elseif  $op == "okcontact"}>
 		<{include file="tpl/okcontact.tpl"}>
+
 	<{* 登入 *}>
 	<{elseif  $op == "login_form"}>
 		<{include file="tpl/login_form.tpl"}>
-		
+	
 	<{* 預約 *}>
 	<{elseif  $op == "reservation_form"}>
-	<{include file="tpl/reservation_form.tpl"}>
+		<{include file="tpl/reservation_form.tpl"}>
 	
-		<{else}>
-		<{* 把body.tpl引進來 *}>
-		<{include file="tpl/body.tpl"}>
+	<{else}>
+	<{* 把body.tpl引進來 *}>
+	<{include file="tpl/body.tpl"}>
+
 	<{/if}>
 
 	<{* 把footer.tpl引進來 *}>

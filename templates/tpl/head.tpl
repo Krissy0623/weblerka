@@ -1,6 +1,6 @@
 <style>
     #mainNav {
-      background-color: rgba(219, 217, 74, .6);
+      background-color: rgba(255, 193, 7, .7);
     }
 </style>
 

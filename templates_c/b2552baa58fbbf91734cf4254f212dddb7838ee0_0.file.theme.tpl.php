@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-02-18 15:51:58
+/* Smarty version 3.1.34-dev-7, created on 2020-02-29 15:25:42
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\theme.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e4bfa0e99d084_20540344',
+  'unifunc' => 'content_5e5a74661dd881_05989780',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b2552baa58fbbf91734cf4254f212dddb7838ee0' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\theme.tpl',
-      1 => 1582036692,
+      1 => 1582986288,
       2 => 'file',
     ),
   ),
@@ -29,7 +29,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:tpl/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5e4bfa0e99d084_20540344 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5a74661dd881_05989780 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -57,36 +57,38 @@ creative/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
 	<!-- Theme CSS - Includes Bootstrap -->
 	<link href="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/css/creative.min.css" rel="stylesheet">
+creative/css/creative.css" rel="stylesheet">
 		<?php $_smarty_tpl->_subTemplateRender("file:tpl/head_js.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 </head>
 
 <body id="page-top">
-	  	<?php $_smarty_tpl->_subTemplateRender("file:tpl/redirect.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+	  		<?php $_smarty_tpl->_subTemplateRender("file:tpl/redirect.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-		<?php $_smarty_tpl->_subTemplateRender("file:tpl/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+			<?php $_smarty_tpl->_subTemplateRender("file:tpl/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-	<?php if ($_smarty_tpl->tpl_vars['op']->value == "contact_form") {?>
+		<?php if ($_smarty_tpl->tpl_vars['op']->value == "contact_form") {?>
 		<?php $_smarty_tpl->_subTemplateRender("file:tpl/contact_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 	<?php } elseif ($_smarty_tpl->tpl_vars['op']->value == "okcontact") {?>
 		<?php $_smarty_tpl->_subTemplateRender("file:tpl/okcontact.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+
 		<?php } elseif ($_smarty_tpl->tpl_vars['op']->value == "login_form") {?>
 		<?php $_smarty_tpl->_subTemplateRender("file:tpl/login_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-		
+	
 		<?php } elseif ($_smarty_tpl->tpl_vars['op']->value == "reservation_form") {?>
-	<?php $_smarty_tpl->_subTemplateRender("file:tpl/reservation_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+		<?php $_smarty_tpl->_subTemplateRender("file:tpl/reservation_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 	
-		<?php } else { ?>
-				<?php $_smarty_tpl->_subTemplateRender("file:tpl/body.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+	<?php } else { ?>
+		<?php $_smarty_tpl->_subTemplateRender("file:tpl/body.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+
 	<?php }?>
 
 		<?php $_smarty_tpl->_subTemplateRender("file:tpl/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -94,6 +96,5 @@ creative/css/creative.min.css" rel="stylesheet">
 
 </body>
 
-</html>
-<?php }
+</html><?php }
 }
