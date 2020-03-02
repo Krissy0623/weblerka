@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-01 15:10:58
+/* Smarty version 3.1.34-dev-7, created on 2020-03-01 15:13:08
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\body.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5bc27288f8e8_47952359',
+  'unifunc' => 'content_5e5bc2f487a979_60339274',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10a15d9627b29a48d1262b71a840c456fef8673b' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\body.tpl',
-      1 => 1583071855,
+      1 => 1583071884,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e5bc27288f8e8_47952359 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5bc2f487a979_60339274 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Masthead -->
 <header class="masthead">
     <div class="container h-100">

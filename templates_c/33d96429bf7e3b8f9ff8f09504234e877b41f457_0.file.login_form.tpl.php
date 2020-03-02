@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-02-18 15:52:02
+/* Smarty version 3.1.34-dev-7, created on 2020-03-02 16:04:16
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\login_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e4bfa12a377e7_75265002',
+  'unifunc' => 'content_5e5d2070a846b7_96709484',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '33d96429bf7e3b8f9ff8f09504234e877b41f457' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\login_form.tpl',
-      1 => 1582032075,
+      1 => 1583161442,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e4bfa12a377e7_75265002 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5d2070a846b7_96709484 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
     .form-signin {
         width: 100%;
@@ -34,7 +34,7 @@ function content_5e4bfa12a377e7_75265002 (Smarty_Internal_Template $_smarty_tpl)
         <h1 class="h3 mb-3 font-weight-normal">會員登入</h1>
         <div class="mb-3">
             <label for="name" class="sr-only">帳號</label>
-            <input type="text" name="name" id="name" class="form-control" placeholder="請輸入帳號"  required>
+            <input type="text" name="uname" id="uname" class="form-control" placeholder="請輸入帳號"  required>
         </div>
         <div class="mb-3">
             <label for="pass" class="sr-only">密碼</label>
@@ -48,6 +48,9 @@ function content_5e4bfa12a377e7_75265002 (Smarty_Internal_Template $_smarty_tpl)
         </div>
         <input type="hidden" name="op" id="op" value="login">
         <button class="btn btn-lg btn-warning btn-block" type="submit">會員登入</button> 
+        <div>
+            您還沒還沒註冊嗎？請 <a href="index.php?op=reg_form">點選此處註冊您的新帳號</a>。
+        </div>        
     </form>
 </div><?php }
 }

@@ -5,6 +5,3 @@
   <!-- Plugin JavaScript -->
   <script src="<{$xoImgUrl}>creative/vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="<{$xoImgUrl}>creative/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="<{$xoImgUrl}>creative/js/creative.min.js"></script>

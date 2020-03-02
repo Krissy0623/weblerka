@@ -2,11 +2,11 @@
 require_once 'head.php';
 
 #權限檢查
-if(!$_SESSION['admin'])redirect_header("index.php", '您沒有權限', 3000);
+if($_SESSION['user']['kind'] !== 1)redirect_header("index.php", '您沒有權限', 3000);
 
 /* 過濾變數，設定預設值 */
 $op = system_CleanVars($_REQUEST, 'op', 'op_list', 'string'); /*$_REQUEST就是POS,GET,COOKIE都算*/
-$sn = system_CleanVars($_REQUEST, 'sn', '', 'int');
+$uid = system_CleanVars($_REQUEST, 'uid', '', 'int');
 
 /* 程式流程 */
 switch ($op){
@@ -30,5 +30,23 @@ $smarty->display('admin.tpl');
 =======================*/
 function op_list(){
     global $smarty,$db;
-
-}
+  
+    $sql = "SELECT * /*選擇所有欄位*/
+            FROM `users` /*從users抓 */
+    "; 
+    
+    $result = $db->query($sql) or die($db->error() . $sql);/*result門票*/
+    $rows=[]; //array();
+    while($row = $result->fetch_assoc()){ /*不知道有幾筆用while;$result->fetch_row()一筆一筆去撈*;用$row去接撈出來的資料*/
+      //加入資料過濾的語法
+      $row['uname'] = htmlspecialchars($row['uname']); //字串
+      $row['uid'] = (int)$row['uid']; //整數
+      $row['kind'] = (int)$row['kind'];
+      // $row['name'] = htmlspecialchars($row['name']);  
+      $row['tel'] = htmlspecialchars($row['tel']);
+      $row['email'] = htmlspecialchars($row['email']);
+      $rows[] = $row;
+    }
+    $smarty->assign("rows",$rows);  
+    // print_r();die();
+  }

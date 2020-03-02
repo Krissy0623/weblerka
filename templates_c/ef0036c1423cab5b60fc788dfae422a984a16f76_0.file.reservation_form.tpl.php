@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-02-29 13:52:34
+/* Smarty version 3.1.34-dev-7, created on 2020-03-02 13:22:08
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\reservation_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5a5e9225d087_79072397',
+  'unifunc' => 'content_5e5cfa70b38b90_55473510',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef0036c1423cab5b60fc788dfae422a984a16f76' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\reservation_form.tpl',
-      1 => 1582980644,
+      1 => 1583151586,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e5a5e9225d087_79072397 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5cfa70b38b90_55473510 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .main-box{
     width: 100%;
@@ -30,7 +30,7 @@ function content_5e5a5e9225d087_79072397 (Smarty_Internal_Template $_smarty_tpl)
 
 }
 .container .col-text dl{
-    width: 1050px;
+    width: auto;
 }
 .container .col-text dl dt{
     border-bottom: 1px solid rgb(150, 148, 148);
@@ -67,7 +67,7 @@ small{
         <div class="container">
                 <h4><strong>🍑 本問卷為四月份預約表單，一定要看完以下文字後再預約</strong></h4>
             <div class="row">
-                <div class="col-text col-md-12 col-lg-6">
+                <div class="col-text col-md-12">
                     <dl>
                         <dt>動物溝通理念</dt>
                             <dd>是以感官直覺來跟動物們交流，可以藉由看見畫面、聽見聲音、嗅見味道、嘗見口感，來確認寶貝們的狀態、需求或某行為發生的原由，並翻譯成人類的語言讓家長們瞭解；因此，動物溝通是場正三角形的交流；而動物溝通不是通靈，所以無法預測未來吉凶。</dd>

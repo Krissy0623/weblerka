@@ -45,19 +45,27 @@
 	<{elseif  $op == "login_form"}>
 		<{include file="tpl/login_form.tpl"}>
 	
+	<{* 註冊 *}>
+	<{elseif  $op == "reg_form"}>
+		<{include file="tpl/reg_form.tpl"}>
+
 	<{* 預約 *}>
 	<{elseif  $op == "reservation_form"}>
 		<{include file="tpl/reservation_form.tpl"}>
+	<{elseif  $op == "okreservation"}>
+		<{include file="tpl/okreservation.tpl"}>
 	
-	<{else}>
-	<{* 把body.tpl引進來 *}>
-	<{include file="tpl/body.tpl"}>
+		<{else}>
+		<{* 把body.tpl引進來 *}>
+		<{include file="tpl/body.tpl"}>
 
 	<{/if}>
 
 	<{* 把footer.tpl引進來 *}>
 	<{include file="tpl/footer.tpl"}>
-
+	
+<!-- Custom scripts for this template -->
+<script src="<{$xoImgUrl}>creative/js/creative.min.js"></script>
 </body>
 
 </html>

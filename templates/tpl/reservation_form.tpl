@@ -7,7 +7,7 @@
 
 }
 .container .col-text dl{
-    width: 1050px;
+    width: auto;
 }
 .container .col-text dl dt{
     border-bottom: 1px solid rgb(150, 148, 148);
@@ -44,7 +44,7 @@ small{
         <div class="container">
                 <h4><strong>🍑 本問卷為四月份預約表單，一定要看完以下文字後再預約</strong></h4>
             <div class="row">
-                <div class="col-text col-md-12 col-lg-6">
+                <div class="col-text col-md-12">
                     <dl>
                         <dt>動物溝通理念</dt>
                             <dd>是以感官直覺來跟動物們交流，可以藉由看見畫面、聽見聲音、嗅見味道、嘗見口感，來確認寶貝們的狀態、需求或某行為發生的原由，並翻譯成人類的語言讓家長們瞭解；因此，動物溝通是場正三角形的交流；而動物溝通不是通靈，所以無法預測未來吉凶。</dd>

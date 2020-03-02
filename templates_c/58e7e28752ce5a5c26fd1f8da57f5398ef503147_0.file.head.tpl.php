@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-02-29 15:29:50
+/* Smarty version 3.1.34-dev-7, created on 2020-03-02 16:09:40
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\head.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5a755edd4f86_60269287',
+  'unifunc' => 'content_5e5d21b4303281_77658933',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '58e7e28752ce5a5c26fd1f8da57f5398ef503147' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\head.tpl',
-      1 => 1582986530,
+      1 => 1583161773,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e5a755edd4f86_60269287 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5d21b4303281_77658933 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
     #mainNav {
       background-color: rgba(255, 193, 7, .7);
@@ -56,10 +56,15 @@ function content_5e5a755edd4f86_60269287 (Smarty_Internal_Template $_smarty_tpl)
                     <a class="nav-link js-scroll-trigger" href="index.php?op=contact_form"><?php echo $_smarty_tpl->tpl_vars['a4']->value;?>
 </a>
                 </li>
-                <?php if ($_SESSION['admin']) {?> 
+                <?php if ($_SESSION['user']['kind'] === 1) {?> 
                                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="user.php">管理員</a>
+                        <a class="nav-link js-scroll-trigger" href="user.php">後台</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="index.php?op=logout">登出</a>
+                    </li>
+                  
+                <?php } elseif ($_SESSION['user']['kind'] === 0) {?>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="index.php?op=logout">登出</a>
                     </li>
