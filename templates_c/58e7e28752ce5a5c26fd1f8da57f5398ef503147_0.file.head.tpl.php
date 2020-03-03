@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-02 16:09:40
+/* Smarty version 3.1.34-dev-7, created on 2020-03-03 17:16:15
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\head.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5d21b4303281_77658933',
+  'unifunc' => 'content_5e5e82cfa2e085_60832317',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '58e7e28752ce5a5c26fd1f8da57f5398ef503147' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\head.tpl',
-      1 => 1583161773,
+      1 => 1583252173,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e5d21b4303281_77658933 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5e82cfa2e085_60832317 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
     #mainNav {
       background-color: rgba(255, 193, 7, .7);
@@ -30,7 +30,7 @@ function content_5e5d21b4303281_77658933 (Smarty_Internal_Template $_smarty_tpl)
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.php">樂咖桃 x Let's talk</a>
+        <a class="navbar-brand js-scroll-trigger" style="margin-left: -50px;" href="index.php">樂咖桃 x Let's talk</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

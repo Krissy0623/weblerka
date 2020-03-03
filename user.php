@@ -10,10 +10,24 @@ $uid = system_CleanVars($_REQUEST, 'uid', '', 'int');
 
 /* 程式流程 */
 switch ($op){
-    default: //都沒有的時候跑default的login_form
-        $op = "op_list"; //login_form
-        op_list();
-        break;  
+  case "op_delete": 
+    $msg = op_delete($uid); 
+    redirect_header("user.php", $msg, 3000);
+    exit;
+
+  case "op_update": 
+    $msg = op_update($uid); 
+    redirect_header("user.php", $msg, 3000);
+    exit;
+
+  case "op_form": 
+    $msg = op_form($uid); 
+    break;
+
+  default: //都沒有的時候跑default的login_form
+      $op = "op_list"; //login_form
+      op_list();
+      break;  
 }
 
 
@@ -28,6 +42,67 @@ $smarty->display('admin.tpl');
 /*=======================
 註冊函式(寫入資料庫)
 =======================*/
+function op_delete($uid){
+  global $db; //$db連到資料庫,並取到該值
+  $sql="DELETE FROM `users` 
+        WHERE `uid` = '{$uid}'
+  ";
+  $db->query($sql) or die($db->error() . $sql);
+  return "會員資料刪除成功";
+}
+
+function op_update($uid=""){ //有給值就是編輯;沒有值就是新增
+  global $db;
+  //下方是用來過濾,變數的過濾
+  $_POST['uname'] = db_filter($_POST['uname'], '帳號');
+  $_POST['pass'] = db_filter($_POST['pass'], ''); //密碼可以不用寫值,因為不是必填
+  $_POST['name'] = db_filter($_POST['name'], '姓名');
+  $_POST['tel'] = db_filter($_POST['tel'], '電話');
+  $_POST['email'] = db_filter($_POST['email'], 'email',FILTER_SANITIZE_EMAIL);
+  $_POST['kind'] = db_filter($_POST['kind'], '會員狀態');
+  //過濾到此↑
+  $and_col = "";
+  if($_POST['pass']){
+    $_POST['pass']  = password_hash($_POST['pass'], PASSWORD_DEFAULT); //加密
+    //假如有傳密碼,才更新密碼
+    $and_col = "`pass` = '{$_POST['pass']}',";
+  }
+  //不管字數還是字串都要用單引號包起來
+  $sql= "UPDATE `users` SET
+        `uname` = '{$_POST['uname']}',
+        {$and_col}  
+        `name` = '{$_POST['name']}',
+        `tel` = '{$_POST['tel']}',
+        `email` = '{$_POST['email']}',
+        `kind` = '{$_POST['kind']}'
+        WHERE `uid` = '{$uid}';
+  "; //die($sql);
+  $db->query($sql) or die($db->error() . $sql);
+  return "會員資料更新成功";
+}
+
+function op_form($uid=""){ //有給值就是編輯;沒有值就是新增
+  global $smarty,$db;
+
+  if($uid){
+    $sql="SELECT *
+          FROM `users`
+          WHERE `uid` = '{$uid}'
+    "; //die($sql);
+  
+    $result = $db->query($sql) or die($db->error() . $sql); /*result門票*/
+    $row = $result->fetch_assoc();
+    // print_r($row);die();
+  }
+  $row['uid'] = isset($row['uid']) ? $row['uid'] : "";
+  $row['uname'] = isset($row['uname']) ? $row['uname'] : "";
+  $row['name'] = isset($row['name']) ? $row['name'] : "";
+  $row['tel'] = isset($row['tel']) ? $row['tel'] : "";
+  $row['email'] = isset($row['email']) ? $row['email'] : "";
+  $row['kind'] = isset($row['kind']) ? $row['kind'] : "0";
+  $smarty->assign("row",$row);  
+}
+
 function op_list(){
     global $smarty,$db;
   
@@ -42,7 +117,6 @@ function op_list(){
       $row['uname'] = htmlspecialchars($row['uname']); //字串
       $row['uid'] = (int)$row['uid']; //整數
       $row['kind'] = (int)$row['kind'];
-      // $row['name'] = htmlspecialchars($row['name']);  
       $row['tel'] = htmlspecialchars($row['tel']);
       $row['email'] = htmlspecialchars($row['email']);
       $rows[] = $row;

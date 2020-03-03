@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-02 16:01:55
+/* Smarty version 3.1.34-dev-7, created on 2020-03-03 17:05:31
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\theme.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5d1fe36d2135_00307360',
+  'unifunc' => 'content_5e5e804b191d54_08375293',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b2552baa58fbbf91734cf4254f212dddb7838ee0' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\theme.tpl',
-      1 => 1583161301,
+      1 => 1583251451,
       2 => 'file',
     ),
   ),
@@ -21,17 +21,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:tpl/head_js.tpl' => 1,
     'file:tpl/redirect.tpl' => 1,
     'file:tpl/head.tpl' => 1,
-    'file:tpl/contact_form.tpl' => 1,
-    'file:tpl/okcontact.tpl' => 1,
-    'file:tpl/login_form.tpl' => 1,
-    'file:tpl/reg_form.tpl' => 1,
-    'file:tpl/reservation_form.tpl' => 1,
-    'file:tpl/okreservation.tpl' => 1,
-    'file:tpl/body.tpl' => 1,
+    'file:tpl/index.tpl' => 1,
     'file:tpl/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5e5d1fe36d2135_00307360 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5e804b191d54_08375293 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -72,32 +66,9 @@ creative/css/creative.css" rel="stylesheet">
 			<?php $_smarty_tpl->_subTemplateRender("file:tpl/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-		<?php if ($_smarty_tpl->tpl_vars['op']->value == "contact_form") {?>
-		<?php $_smarty_tpl->_subTemplateRender("file:tpl/contact_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+		<?php if ($_smarty_tpl->tpl_vars['WEB']->value['file_name'] == "index.php") {?>
+		<?php $_smarty_tpl->_subTemplateRender("file:tpl/index.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-	<?php } elseif ($_smarty_tpl->tpl_vars['op']->value == "okcontact") {?>
-		<?php $_smarty_tpl->_subTemplateRender("file:tpl/okcontact.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-
-		<?php } elseif ($_smarty_tpl->tpl_vars['op']->value == "login_form") {?>
-		<?php $_smarty_tpl->_subTemplateRender("file:tpl/login_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-	
-		<?php } elseif ($_smarty_tpl->tpl_vars['op']->value == "reg_form") {?>
-		<?php $_smarty_tpl->_subTemplateRender("file:tpl/reg_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-
-		<?php } elseif ($_smarty_tpl->tpl_vars['op']->value == "reservation_form") {?>
-		<?php $_smarty_tpl->_subTemplateRender("file:tpl/reservation_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-	<?php } elseif ($_smarty_tpl->tpl_vars['op']->value == "okreservation") {?>
-		<?php $_smarty_tpl->_subTemplateRender("file:tpl/okreservation.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-	
-		<?php } else { ?>
-				<?php $_smarty_tpl->_subTemplateRender("file:tpl/body.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-
 	<?php }?>
 
 		<?php $_smarty_tpl->_subTemplateRender("file:tpl/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-02 16:46:52
+/* Smarty version 3.1.34-dev-7, created on 2020-03-03 17:08:55
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5d2a6c2d0076_64812177',
+  'unifunc' => 'content_5e5e81175bea26_99049840',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '19e2b4d987f54a0659f8326440a8e9ca272e5fef' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\admin.tpl',
-      1 => 1583161064,
+      1 => 1583251725,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:tpl/redirect.tpl' => 1,
     'file:tpl/user.tpl' => 1,
+    'file:tpl/prod.tpl' => 1,
+    'file:tpl/kind.tpl' => 1,
+    'file:tpl/menu.tpl' => 1,
+    'file:tpl/slide.tpl' => 1,
   ),
 ),false)) {
-function content_5e5d2a6c2d0076_64812177 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5e81175bea26_99049840 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -32,9 +36,6 @@ function content_5e5d2a6c2d0076_64812177 (Smarty_Internal_Template $_smarty_tpl)
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <title><?php echo $_smarty_tpl->tpl_vars['WEB']->value['web_title'];?>
-</title>
 
   <!-- Bootstrap core CSS -->
   <link href="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
@@ -46,25 +47,40 @@ admin/css/simple-sidebar.css" rel="stylesheet">
 
   <!-- Font Awesome Icons -->
   <link href="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  
+  <title><?php echo $_smarty_tpl->tpl_vars['WEB']->value['web_title'];?>
+</title>
+  
+  <!-- Bootstrap core JavaScript -->
+  <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
+admin/vendor/jquery/jquery.min.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
+admin/vendor/bootstrap/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
+>
+
+
 </head>
 
 <body>
 
     <?php $_smarty_tpl->_subTemplateRender("file:tpl/redirect.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+  
   <div class="d-flex" id="wrapper">
-
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">桃桃 x 後台管理</div>
       <div class="list-group list-group-flush">
         <a href="user.php" class="list-group-item list-group-item-action bg-light">會員管理</a> <!--預約管理-->
         <a href="#" class="list-group-item list-group-item-action bg-light">聯絡事項</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">商品管理</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">類別管理</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">選單管理</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">輪播圖管理</a>
+        <a href="prod.php" class="list-group-item list-group-item-action bg-light">商品管理</a>
+        <a href="kind.php" class="list-group-item list-group-item-action bg-light">類別管理</a>
+        <a href="menu.php" class="list-group-item list-group-item-action bg-light">選單管理</a>
+        <a href="slide.php" class="list-group-item list-group-item-action bg-light">輪播圖管理</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -106,39 +122,31 @@ vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 </h1>
     <div class="container">
         <div class="row">
-            <div class="col-sm-9">
+            <div class="col-sm-12">
 
                 <?php if ($_smarty_tpl->tpl_vars['WEB']->value['file_name'] == "user.php") {?>
                     <?php $_smarty_tpl->_subTemplateRender("file:tpl/user.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+                <?php } elseif ($_smarty_tpl->tpl_vars['WEB']->value['file_name'] == "prod.php") {?>  
+                    <?php $_smarty_tpl->_subTemplateRender("file:tpl/prod.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+                <?php } elseif ($_smarty_tpl->tpl_vars['WEB']->value['file_name'] == "kind.php") {?>  
+                    <?php $_smarty_tpl->_subTemplateRender("file:tpl/kind.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+                <?php } elseif ($_smarty_tpl->tpl_vars['WEB']->value['file_name'] == "menu.php") {?>
+                    <?php $_smarty_tpl->_subTemplateRender("file:tpl/menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+                <?php } elseif ($_smarty_tpl->tpl_vars['WEB']->value['file_name'] == "slide.php") {?>  
+                  <?php $_smarty_tpl->_subTemplateRender("file:tpl/slide.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+                  
                 <?php }?>
             </div>
         </div>
     </div>
-
-
-
-
-      <!-- <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
-      </div>
-    </div> -->
     <!-- /#page-content-wrapper -->
 
   </div>
-  <!-- /#wrapper -->
-
-  <!-- Bootstrap core JavaScript -->
-  <?php echo '<script'; ?>
- src="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-admin/vendor/jquery/jquery.min.js"><?php echo '</script'; ?>
->
-  <?php echo '<script'; ?>
- src="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-admin/vendor/bootstrap/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
->
 
   <!-- Menu Toggle Script -->
   <?php echo '<script'; ?>

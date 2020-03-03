@@ -8,8 +8,6 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title><{$WEB.web_title}></title>
-
   <!-- Bootstrap core CSS -->
   <link href="<{$xoImgUrl}>admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -17,25 +15,33 @@
   <link href="<{$xoImgUrl}>admin/css/simple-sidebar.css" rel="stylesheet">
 
   <!-- Font Awesome Icons -->
-  <link href="<{$xoImgUrl}>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="<{$xoImgUrl}>admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  
+  <title><{$WEB.web_title}></title>
+  
+  <!-- Bootstrap core JavaScript -->
+  <script src="<{$xoImgUrl}>admin/vendor/jquery/jquery.min.js"></script>
+  <script src="<{$xoImgUrl}>admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
 </head>
 
 <body>
 
   <{* 轉向樣版連結 *}>
   <{include file="tpl/redirect.tpl"}>
+  
   <div class="d-flex" id="wrapper">
-
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">桃桃 x 後台管理</div>
       <div class="list-group list-group-flush">
         <a href="user.php" class="list-group-item list-group-item-action bg-light">會員管理</a> <!--預約管理-->
         <a href="#" class="list-group-item list-group-item-action bg-light">聯絡事項</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">商品管理</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">類別管理</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">選單管理</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">輪播圖管理</a>
+        <a href="prod.php" class="list-group-item list-group-item-action bg-light">商品管理</a>
+        <a href="kind.php" class="list-group-item list-group-item-action bg-light">類別管理</a>
+        <a href="menu.php" class="list-group-item list-group-item-action bg-light">選單管理</a>
+        <a href="slide.php" class="list-group-item list-group-item-action bg-light">輪播圖管理</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -76,32 +82,26 @@
     <h1 class="text-center mt-3"><{$WEB.web_title}></h1>
     <div class="container">
         <div class="row">
-            <div class="col-sm-9">
+            <div class="col-sm-12">
 
                 <{if $WEB.file_name == "user.php"}>
                     <{include file="tpl/user.tpl"}>
+                <{elseif $WEB.file_name == "prod.php"}>  
+                    <{include file="tpl/prod.tpl"}>
+                <{elseif $WEB.file_name == "kind.php"}>  
+                    <{include file="tpl/kind.tpl"}>
+                <{elseif $WEB.file_name == "menu.php"}>
+                    <{include file="tpl/menu.tpl"}>
+                <{elseif $WEB.file_name == "slide.php"}>  
+                  <{include file="tpl/slide.tpl"}>
+                  
                 <{/if}>
             </div>
         </div>
     </div>
-
-
-
-
-      <!-- <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
-      </div>
-    </div> -->
     <!-- /#page-content-wrapper -->
 
   </div>
-  <!-- /#wrapper -->
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="<{$xoImgUrl}>admin/vendor/jquery/jquery.min.js"></script>
-  <script src="<{$xoImgUrl}>admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Menu Toggle Script -->
   <script>
