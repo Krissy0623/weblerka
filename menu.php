@@ -1,19 +1,31 @@
 <?php
-/* 引入檔頭，每支程都會引入 */
+#引入檔頭，每支程都會引入
 require_once 'head.php';
  
 if($_SESSION['user']['kind'] !== 1)redirect_header("index.php", '您沒有權限', 3000);
 
-/* 過濾變數，設定預設值 */
+#過濾變數，設定預設值
 $op = system_CleanVars($_REQUEST, 'op', 'op_list', 'string');
 $sn = system_CleanVars($_REQUEST, 'sn', '', 'int');
 $kind = system_CleanVars($_REQUEST, 'kind', 'mainMenu', 'string');
 
-$kinds = ["mainMenu","cartMenu"]; 
-$kind = (in_array("$kind",$kinds)) ? $kind : "mainMenu";
-// echo $op;die();
- 
-/* 程式流程 */
+$kinds[] = array(
+  "value" => "mainMenu",
+  "title" => "導覽列選單"
+);
+$kinds[] = array(
+  "value" => "cartMenu",
+  "title" => "購物車選單"
+);
+$smarty->assign("kinds", $kinds);
+
+/*===========================
+  防呆
+  $kind = (in_array($kind, $kinds)) ? $kind : "mainMenu";
+  echo $op;die();
+===========================*/
+
+#程式流程
 switch ($op){
   case "op_delete" :
     $msg = op_delete($kind,$sn);
@@ -90,12 +102,8 @@ function op_insert($kind,$sn=""){
     $db->query($sql) or die($db->error() . $sql);
     $sn = $db->insert_id;
     $msg = "選單資料新增成功";    
-
   }
-
-
   return $msg;
-
 }
 
 /*===========================
@@ -111,8 +119,8 @@ function getKindsBySn($sn){
   $result = $db->query($sql) or die($db->error() . $sql);
   $row = $result->fetch_assoc();
   return $row;
-
 }
+
 /*===========================
   用kind 取得數量的最大值
 ===========================*/
@@ -146,10 +154,8 @@ function op_form($kind,$sn=""){
   $row['target'] = isset($row['target']) ? $row['target'] : "0";
   $row['sort'] = isset($row['sort']) ? $row['sort'] : getKindMaxSortByKind($kind);
   
-
   $smarty->assign("row",$row);
 }
-
 
 function op_list($kind){
   global $smarty,$db;
@@ -172,5 +178,4 @@ function op_list($kind){
   }
   $smarty->assign("rows",$rows);  
   $smarty->assign("kind",$kind);  
-
 }

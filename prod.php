@@ -4,11 +4,11 @@ require_once 'head.php';
 #權限檢查
 if($_SESSION['user']['kind'] !== 1)redirect_header("index.php", '您沒有權限', 3000);
 
-/* 過濾變數，設定預設值 */
+#過濾變數，設定預設值
 $op = system_CleanVars($_REQUEST, 'op', 'op_list', 'string'); /*$_REQUEST就是POS,GET,COOKIE都算*/
 $sn = system_CleanVars($_REQUEST, 'sn', '', 'int');
  
-/* 程式流程 */
+#程式流程
 switch ($op){
   	case "op_delete": 
 		$msg = op_delete($sn); 
@@ -48,7 +48,7 @@ function op_delete($sn){
 	#刪除舊圖
 	# 1.刪除實體檔案
 	# 2.刪除files資料表
-	delFilesByKindColsnSort("prod",$sn,1);		
+	delFilesByKindColsnSort("prod",$sn,1); //用kind col_sn sort 取得圖片資料		
 	
 	#刪除商品資料表
 	$sql="DELETE FROM `prods` 
@@ -58,10 +58,9 @@ function op_delete($sn){
 	return "商品資料刪除成功";
 }
 
-
 function op_insert($sn=""){ //有給值就是編輯;沒有值就是新增
 	global $db;
-	//下方是用來過濾,變數的過濾
+	#下方是用來過濾,變數的過濾
 	$_POST['sn'] = db_filter($_POST['sn'], ''); //流水號
 	$_POST['kind_sn'] = db_filter($_POST['kind_sn'], ''); //類別
 	$_POST['title'] = db_filter($_POST['title'], '標題');
@@ -74,7 +73,7 @@ function op_insert($sn=""){ //有給值就是編輯;沒有值就是新增
 
 	$_POST['sort'] = db_filter($_POST['sort'], '');
 	$_POST['counter'] = db_filter($_POST['counter'], '');
-	//過濾到此↑
+	#過濾到此↑
 
 	if($sn){
 		$sql="UPDATE  `prods` SET

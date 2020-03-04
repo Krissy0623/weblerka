@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-03 17:08:55
+/* Smarty version 3.1.34-dev-7, created on 2020-03-04 16:43:08
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5e81175bea26_99049840',
+  'unifunc' => 'content_5e5fcc8c9a0d76_27063743',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '19e2b4d987f54a0659f8326440a8e9ca272e5fef' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\admin.tpl',
-      1 => 1583251725,
+      1 => 1583336585,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:tpl/slide.tpl' => 1,
   ),
 ),false)) {
-function content_5e5e81175bea26_99049840 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5fcc8c9a0d76_27063743 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -78,8 +78,8 @@ admin/vendor/bootstrap/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
         <a href="user.php" class="list-group-item list-group-item-action bg-light">會員管理</a> <!--預約管理-->
         <a href="#" class="list-group-item list-group-item-action bg-light">聯絡事項</a>
         <a href="prod.php" class="list-group-item list-group-item-action bg-light">商品管理</a>
-        <a href="kind.php" class="list-group-item list-group-item-action bg-light">類別管理</a>
-        <a href="menu.php" class="list-group-item list-group-item-action bg-light">選單管理</a>
+        <a href="kind.php" class="list-group-item list-group-item-action bg-light">[ 商品 / 訂單 ] 類別管理</a>
+        <a href="menu.php" class="list-group-item list-group-item-action bg-light">[ 導覽列 / 購物車 ] 選單管理</a>
         <a href="slide.php" class="list-group-item list-group-item-action bg-light">輪播圖管理</a>
       </div>
     </div>
@@ -101,7 +101,7 @@ admin/vendor/bootstrap/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
               <a class="nav-link" href="index.php">首頁 <span class="sr-only"></span></a>
             </li>
             <!-- <li class="nav-item">
-              <a class="nav-link" href="https://www.facebook.com/LerkaTao/">臉書</a>
+              <a class="nav-link" href="cart.php">購物車</a>
             </li> -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

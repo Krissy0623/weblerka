@@ -1,17 +1,26 @@
 <?php
-/* 引入檔頭，每支程都會引入 */
+#引入檔頭，每支程都會引入
 require_once 'head.php';
  
 if($_SESSION['user']['kind'] !== 1)redirect_header("index.php", '您沒有權限', 3000);
 
-/* 過濾變數，設定預設值 */
+#過濾變數，設定預設值
 $op = system_CleanVars($_REQUEST, 'op', 'op_list', 'string');
 $sn = system_CleanVars($_REQUEST, 'sn', '', 'int');
 $kind = system_CleanVars($_REQUEST, 'kind', 'prod', 'string');
-$kind = "prod";
+
+$kinds[] = array(
+  "value" => "prod",
+  "title" => "商品類別"
+);
+$kinds[] = array(
+  "value" => "orderKind",
+  "title" => "訂單類別"
+);
+$smarty->assign("kinds", $kinds);
 // echo $op;die();
  
-/* 程式流程 */
+#程式流程
 switch ($op){
   case "op_delete" :
     $msg = op_delete($kind,$sn);
@@ -47,7 +56,6 @@ $smarty->display('admin.tpl');
 /*---- 函數區-----*/
 function op_delete($kind,$sn){
   global $db;
-
   #刪除類別資料表
   $sql="DELETE FROM `kinds`
         WHERE `sn` = '{$sn}'
@@ -84,12 +92,8 @@ function op_insert($kind,$sn=""){
     $db->query($sql) or die($db->error() . $sql);
     $sn = $db->insert_id;
     $msg = "類別資料新增成功";    
-
   }
-
-
   return $msg;
-
 }
 
 /*===========================
@@ -105,8 +109,8 @@ function getKindsBySn($sn){
   $result = $db->query($sql) or die($db->error() . $sql);
   $row = $result->fetch_assoc();
   return $row;
-
 }
+
 /*===========================
   用kind 取得數量的最大值
 ===========================*/
@@ -131,21 +135,17 @@ function op_form($kind,$sn=""){
   }else{
     $row['op'] = "op_insert";
   }
-
   $row['sn'] = isset($row['sn']) ? $row['sn'] : "";
   $row['kind'] = isset($row['kind']) ? $row['kind'] : $kind;
   $row['title'] = isset($row['title']) ? $row['title'] : "";
   $row['enable'] = isset($row['enable']) ? $row['enable'] : "1";
   $row['sort'] = isset($row['sort']) ? $row['sort'] : getKindMaxSortByKind($kind);
   
-
   $smarty->assign("row",$row);
 }
 
-
 function op_list($kind){
   global $smarty,$db;
-  
   $sql = "SELECT *
           FROM `kinds`
           WHERE `kind`='{$kind}'
@@ -161,5 +161,4 @@ function op_list($kind){
   }
   $smarty->assign("rows",$rows);  
   $smarty->assign("kind",$kind);  
-
 }

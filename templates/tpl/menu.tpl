@@ -1,25 +1,26 @@
 <{if $op=="op_list"}>
-
+    <{* 切換選單 *}>
     <div class="row mb-2">
         <div class="cols-sm-4">
             <select name="kind" id="kind" class="form-control" onchange="location.href='?kind='+this.value">
-                <option value="mainMenu" selected="">主選單</option>
-                <option value="cartMenu">購物車選單</option>
+                <{foreach $kinds as $row}>
+                    <option value="<{$row.value}>" <{if $kind == $row.value}>selected<{/if}> ><{$row.title}></option>
+                <{/foreach}>
             </select>
         </div>
     </div>
-
+    <{* 選單管理清單 *}>
     <table class="table table-striped table-bordered table-hover table-sm">
         <thead>
-        <tr> 
-            <th scope="col">標題</th>
-            <th scope="col">網址</th>
-            <th scope="col" class="text-center">外連</th>
-            <th scope="col" class="text-center">狀態</th>
-            <th scope="col" class="text-center">
-                <a href="?op=op_form&kind=<{$kind}>"><i class="fas fa-plus-square"></i>新增</a>
-            </th>
-        </tr>
+            <tr> 
+                <th scope="col">標題</th>
+                <th scope="col">網址</th>
+                <th scope="col" class="text-center">外連</th>
+                <th scope="col" class="text-center">狀態</th>
+                <th scope="col" class="text-center">
+                    <a href="?op=op_form&kind=<{$kind}>"><i class="fas fa-plus-square"></i>新增</a>
+                </th>
+            </tr>
         </thead>
         <tbody>
             <{foreach $rows as $row}>
@@ -38,7 +39,6 @@
                     <td colspan=5>目前沒有資料</td>
                 </tr>
             <{/foreach}>
-
         </tbody>
     </table>
     
@@ -65,16 +65,15 @@
     </script>
 <{/if}>
 <{if $op=="op_form"}>
-    
-    <div class="container">        
+    <{* 單一項目編輯 *}>
+    <div class="container">
         <form action="menu.php" method="post" id="myForm" class="mb-2" enctype="multipart/form-data">
-            <!-- 	 						 -->
-            <div class="row">         
-                <!--標題-->              
+            <div class="row">
+                <!--標題-->
                 <div class="col-sm-12">
                     <div class="form-group">
                         <label>標題<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" name="title" id="title" value="<{$row.title}>" >
+                        <input type="text" class="form-control" name="title" id="title" value="<{$row.title}>">
                     </div>
                 </div>      
                 <!--網址-->              
@@ -112,14 +111,13 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center pb-20">
-            <input type="hidden" name="op" value="<{$row.op}>">
-            <input type="hidden" name="sn" value="<{$row.sn}>">
-            <input type="hidden" name="kind" value="<{$row.kind}>">
-            <button type="submit" class="btn btn-primary">送出</button>
+                <input type="hidden" name="op" value="<{$row.op}>">
+                <input type="hidden" name="sn" value="<{$row.sn}>">
+                <input type="hidden" name="kind" value="<{$row.kind}>">
+                <button type="submit" class="btn btn-primary">送出</button>
             </div>
-        
         </form>
         <!-- 表單驗證 -->
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
@@ -155,6 +153,5 @@
             });
         </script>
         <script type='text/javascript' src='<{$xoAppUrl}>class/My97DatePicker/WdatePicker.js'></script>
-        
     </div>
 <{/if}>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-03 16:36:43
+/* Smarty version 3.1.34-dev-7, created on 2020-03-04 17:00:34
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5e798b7c0fd4_27034616',
+  'unifunc' => 'content_5e5fd0a2a04828_87223234',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f96e55698f92d6a4c5456bff2c47ce99d5f649f2' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\menu.tpl',
-      1 => 1583247035,
+      1 => 1583337630,
       2 => 'file',
     ),
   ),
@@ -20,30 +20,38 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e5e798b7c0fd4_27034616 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5fd0a2a04828_87223234 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['op']->value == "op_list") {?>
-
-    <div class="row mb-2">
+        <div class="row mb-2">
         <div class="cols-sm-4">
             <select name="kind" id="kind" class="form-control" onchange="location.href='?kind='+this.value">
-                <option value="mainMenu" selected="">主選單</option>
-                <option value="cartMenu">購物車選單</option>
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['kinds']->value, 'row');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
+?>
+                    <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value['value'];?>
+" <?php if ($_smarty_tpl->tpl_vars['kind']->value == $_smarty_tpl->tpl_vars['row']->value['value']) {?>selected<?php }?> ><?php echo $_smarty_tpl->tpl_vars['row']->value['title'];?>
+</option>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </select>
         </div>
     </div>
-
-    <table class="table table-striped table-bordered table-hover table-sm">
+        <table class="table table-striped table-bordered table-hover table-sm">
         <thead>
-        <tr> 
-            <th scope="col">標題</th>
-            <th scope="col">網址</th>
-            <th scope="col" class="text-center">外連</th>
-            <th scope="col" class="text-center">狀態</th>
-            <th scope="col" class="text-center">
-                <a href="?op=op_form&kind=<?php echo $_smarty_tpl->tpl_vars['kind']->value;?>
+            <tr> 
+                <th scope="col">標題</th>
+                <th scope="col">網址</th>
+                <th scope="col" class="text-center">外連</th>
+                <th scope="col" class="text-center">狀態</th>
+                <th scope="col" class="text-center">
+                    <a href="?op=op_form&kind=<?php echo $_smarty_tpl->tpl_vars['kind']->value;?>
 "><i class="fas fa-plus-square"></i>新增</a>
-            </th>
-        </tr>
+                </th>
+            </tr>
         </thead>
         <tbody>
             <?php
@@ -77,7 +85,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
             <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-
         </tbody>
     </table>
     
@@ -110,17 +117,15 @@ class/sweetalert2/sweetalert2.min.js"><?php echo '</script'; ?>
 >
 <?php }
 if ($_smarty_tpl->tpl_vars['op']->value == "op_form") {?>
-    
-    <div class="container">        
+        <div class="container">
         <form action="menu.php" method="post" id="myForm" class="mb-2" enctype="multipart/form-data">
-            <!-- 	 						 -->
-            <div class="row">         
-                <!--標題-->              
+            <div class="row">
+                <!--標題-->
                 <div class="col-sm-12">
                     <div class="form-group">
                         <label>標題<span class="text-danger">*</span></label>
                         <input type="text" class="form-control" name="title" id="title" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['title'];?>
-" >
+">
                     </div>
                 </div>      
                 <!--網址-->              
@@ -160,17 +165,16 @@ if ($_smarty_tpl->tpl_vars['op']->value == "op_form") {?>
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center pb-20">
-            <input type="hidden" name="op" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['op'];?>
+                <input type="hidden" name="op" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['op'];?>
 ">
-            <input type="hidden" name="sn" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['sn'];?>
+                <input type="hidden" name="sn" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['sn'];?>
 ">
-            <input type="hidden" name="kind" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['kind'];?>
+                <input type="hidden" name="kind" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['kind'];?>
 ">
-            <button type="submit" class="btn btn-primary">送出</button>
+                <button type="submit" class="btn btn-primary">送出</button>
             </div>
-        
         </form>
         <!-- 表單驗證 -->
         <?php echo '<script'; ?>
@@ -213,7 +217,6 @@ if ($_smarty_tpl->tpl_vars['op']->value == "op_form") {?>
  type='text/javascript' src='<?php echo $_smarty_tpl->tpl_vars['xoAppUrl']->value;?>
 class/My97DatePicker/WdatePicker.js'><?php echo '</script'; ?>
 >
-        
     </div>
 <?php }
 }

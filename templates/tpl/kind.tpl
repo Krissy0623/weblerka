@@ -1,4 +1,15 @@
 <{if $op=="op_list"}>
+    <{* 切換選單 *}>
+    <div class="row mb-2">
+        <div class="cols-sm-4">
+            <select name="kind" id="kind" class="form-control" onchange="location.href='?kind='+this.value">
+                <{foreach $kinds as $row}>
+                    <option value="<{$row.value}>" <{if $kind == $row.value}>selected<{/if}> ><{$row.title}></option>
+                <{/foreach}>
+            </select>
+        </div>
+    </div>
+    <{* 類別管理清單 *}>
     <table class="table table-striped table-bordered table-hover table-sm">
         <thead>
         <tr> 
@@ -24,7 +35,6 @@
                     <td colspan=3>目前沒有資料</td>
                 </tr>
             <{/foreach}>
-
         </tbody>
     </table>
     
@@ -51,10 +61,9 @@
     </script>
 <{/if}>
 <{if $op=="op_form"}>
-    
+    <{* 單一類別編輯 *}>
     <div class="container">        
         <form action="kind.php" method="post" id="myForm" class="mb-2" enctype="multipart/form-data">
-            <!-- 	 						 -->
             <div class="row">         
                 <!--標題-->              
                 <div class="col-sm-4">
@@ -73,7 +82,6 @@
                         <label for="enable_0" style="display:inline;">停用</label>
                     </div>
                 </div>  
-       
                 <!--排序-->              
                 <div class="col-sm-3">
                     <div class="form-group">
@@ -84,10 +92,10 @@
             </div>
             
             <div class="text-center pb-20">
-            <input type="hidden" name="op" value="<{$row.op}>">
-            <input type="hidden" name="sn" value="<{$row.sn}>">
-            <input type="hidden" name="kind" value="<{$row.kind}>">
-            <button type="submit" class="btn btn-primary">送出</button>
+                <input type="hidden" name="op" value="<{$row.op}>"> <{* 新增或更新 *}>
+                <input type="hidden" name="sn" value="<{$row.sn}>"> <{* 更新 *}>
+                <input type="hidden" name="kind" value="<{$row.kind}>"> <{* 哪一筆 *}>
+                <button type="submit" class="btn btn-primary">送出</button>
             </div>
         
         </form>

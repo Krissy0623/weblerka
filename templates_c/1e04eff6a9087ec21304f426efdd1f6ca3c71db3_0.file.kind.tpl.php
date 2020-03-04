@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-03 16:36:41
+/* Smarty version 3.1.34-dev-7, created on 2020-03-04 17:01:45
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\kind.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5e79896800e5_66128978',
+  'unifunc' => 'content_5e5fd0e96e2684_50632466',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1e04eff6a9087ec21304f426efdd1f6ca3c71db3' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\kind.tpl',
-      1 => 1583248429,
+      1 => 1583337605,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,27 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e5e79896800e5_66128978 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5fd0e96e2684_50632466 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['op']->value == "op_list") {?>
-    <table class="table table-striped table-bordered table-hover table-sm">
+        <div class="row mb-2">
+        <div class="cols-sm-4">
+            <select name="kind" id="kind" class="form-control" onchange="location.href='?kind='+this.value">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['kinds']->value, 'row');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
+?>
+                    <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value['value'];?>
+" <?php if ($_smarty_tpl->tpl_vars['kind']->value == $_smarty_tpl->tpl_vars['row']->value['value']) {?>selected<?php }?> ><?php echo $_smarty_tpl->tpl_vars['row']->value['title'];?>
+</option>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </select>
+        </div>
+    </div>
+        <table class="table table-striped table-bordered table-hover table-sm">
         <thead>
         <tr> 
             <th scope="col">標題</th>
@@ -62,7 +80,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
             <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-
         </tbody>
     </table>
     
@@ -95,10 +112,8 @@ class/sweetalert2/sweetalert2.min.js"><?php echo '</script'; ?>
 >
 <?php }
 if ($_smarty_tpl->tpl_vars['op']->value == "op_form") {?>
-    
-    <div class="container">        
+        <div class="container">        
         <form action="kind.php" method="post" id="myForm" class="mb-2" enctype="multipart/form-data">
-            <!-- 	 						 -->
             <div class="row">         
                 <!--標題-->              
                 <div class="col-sm-4">
@@ -118,7 +133,6 @@ if ($_smarty_tpl->tpl_vars['op']->value == "op_form") {?>
                         <label for="enable_0" style="display:inline;">停用</label>
                     </div>
                 </div>  
-       
                 <!--排序-->              
                 <div class="col-sm-3">
                     <div class="form-group">
@@ -130,13 +144,10 @@ if ($_smarty_tpl->tpl_vars['op']->value == "op_form") {?>
             </div>
             
             <div class="text-center pb-20">
-            <input type="hidden" name="op" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['op'];?>
-">
-            <input type="hidden" name="sn" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['sn'];?>
-">
-            <input type="hidden" name="kind" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['kind'];?>
-">
-            <button type="submit" class="btn btn-primary">送出</button>
+                <input type="hidden" name="op" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['op'];?>
+">                 <input type="hidden" name="sn" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['sn'];?>
+">                 <input type="hidden" name="kind" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['kind'];?>
+">                 <button type="submit" class="btn btn-primary">送出</button>
             </div>
         
         </form>

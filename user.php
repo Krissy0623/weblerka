@@ -4,11 +4,11 @@ require_once 'head.php';
 #權限檢查
 if($_SESSION['user']['kind'] !== 1)redirect_header("index.php", '您沒有權限', 3000);
 
-/* 過濾變數，設定預設值 */
+#過濾變數，設定預設值
 $op = system_CleanVars($_REQUEST, 'op', 'op_list', 'string'); /*$_REQUEST就是POS,GET,COOKIE都算*/
 $uid = system_CleanVars($_REQUEST, 'uid', '', 'int');
 
-/* 程式流程 */
+#程式流程
 switch ($op){
   case "op_delete": 
     $msg = op_delete($uid); 
@@ -25,9 +25,9 @@ switch ($op){
     break;
 
   default: //都沒有的時候跑default的login_form
-      $op = "op_list"; //login_form
-      op_list();
-      break;  
+    $op = "op_list";
+    op_list();
+    break;  
 }
 
 
@@ -43,7 +43,8 @@ $smarty->display('admin.tpl');
 註冊函式(寫入資料庫)
 =======================*/
 function op_delete($uid){
-  global $db; //$db連到資料庫,並取到該值
+  global $db; 
+  #$db連到資料庫,並取到該值
   $sql="DELETE FROM `users` 
         WHERE `uid` = '{$uid}'
   ";
@@ -53,21 +54,21 @@ function op_delete($uid){
 
 function op_update($uid=""){ //有給值就是編輯;沒有值就是新增
   global $db;
-  //下方是用來過濾,變數的過濾
+  #下方是用來過濾,變數的過濾
   $_POST['uname'] = db_filter($_POST['uname'], '帳號');
   $_POST['pass'] = db_filter($_POST['pass'], ''); //密碼可以不用寫值,因為不是必填
   $_POST['name'] = db_filter($_POST['name'], '姓名');
   $_POST['tel'] = db_filter($_POST['tel'], '電話');
   $_POST['email'] = db_filter($_POST['email'], 'email',FILTER_SANITIZE_EMAIL);
   $_POST['kind'] = db_filter($_POST['kind'], '會員狀態');
-  //過濾到此↑
+  #過濾到此↑
   $and_col = "";
   if($_POST['pass']){
     $_POST['pass']  = password_hash($_POST['pass'], PASSWORD_DEFAULT); //加密
-    //假如有傳密碼,才更新密碼
+    #假如有傳密碼,才更新密碼
     $and_col = "`pass` = '{$_POST['pass']}',";
   }
-  //不管字數還是字串都要用單引號包起來
+  #不管字數還是字串都要用單引號包起來
   $sql= "UPDATE `users` SET
         `uname` = '{$_POST['uname']}',
         {$and_col}  
@@ -112,8 +113,8 @@ function op_list(){
     
     $result = $db->query($sql) or die($db->error() . $sql);/*result門票*/
     $rows=[]; //array();
-    while($row = $result->fetch_assoc()){ /*不知道有幾筆用while;$result->fetch_row()一筆一筆去撈*;用$row去接撈出來的資料*/
-      //加入資料過濾的語法
+    while($row = $result->fetch_assoc()){ //不知道有幾筆用while;$result->fetch_row()一筆一筆去撈*;用$row去接撈出來的資料
+      #加入資料過濾的語法
       $row['uname'] = htmlspecialchars($row['uname']); //字串
       $row['uid'] = (int)$row['uid']; //整數
       $row['kind'] = (int)$row['kind'];

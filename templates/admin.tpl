@@ -39,8 +39,8 @@
         <a href="user.php" class="list-group-item list-group-item-action bg-light">會員管理</a> <!--預約管理-->
         <a href="#" class="list-group-item list-group-item-action bg-light">聯絡事項</a>
         <a href="prod.php" class="list-group-item list-group-item-action bg-light">商品管理</a>
-        <a href="kind.php" class="list-group-item list-group-item-action bg-light">類別管理</a>
-        <a href="menu.php" class="list-group-item list-group-item-action bg-light">選單管理</a>
+        <a href="kind.php" class="list-group-item list-group-item-action bg-light">[ 商品 / 訂單 ] 類別管理</a>
+        <a href="menu.php" class="list-group-item list-group-item-action bg-light">[ 導覽列 / 購物車 ] 選單管理</a>
         <a href="slide.php" class="list-group-item list-group-item-action bg-light">輪播圖管理</a>
       </div>
     </div>
@@ -62,7 +62,7 @@
               <a class="nav-link" href="index.php">首頁 <span class="sr-only"></span></a>
             </li>
             <!-- <li class="nav-item">
-              <a class="nav-link" href="https://www.facebook.com/LerkaTao/">臉書</a>
+              <a class="nav-link" href="cart.php">購物車</a>
             </li> -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
