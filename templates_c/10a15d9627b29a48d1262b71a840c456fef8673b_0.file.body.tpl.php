@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-01 15:13:08
+/* Smarty version 3.1.34-dev-7, created on 2020-03-05 15:58:17
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\body.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5bc2f487a979_60339274',
+  'unifunc' => 'content_5e611389d42cf9_03215533',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10a15d9627b29a48d1262b71a840c456fef8673b' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\body.tpl',
-      1 => 1583071884,
+      1 => 1583420146,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,69 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e5bc2f487a979_60339274 (Smarty_Internal_Template $_smarty_tpl) {
-?><!-- Masthead -->
-<header class="masthead">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center justify-content-center text-center">
-            <!-- <div class="col-lg-10 align-self-end">
-                <h1 class="text-uppercase text-white font-weight-bold">溝通，從聆聽開始。</h1>
-                <hr class="divider my-4">
-            </div>
-            <div class="col-lg-8 align-self-baseline">
-                <p class="text-white-75 font-weight-light mb-5"></p>
-                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">了解更多</a>
-            </div> -->
+function content_5e611389d42cf9_03215533 (Smarty_Internal_Template $_smarty_tpl) {
+if ($_smarty_tpl->tpl_vars['mainSlides']->value[0]['pic']) {?>
+<!-- 輪播圖 -->
+<style>
+  .carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  } 
+</style>
+<header>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['mainSlides']->value, 'mainSlide', false, 'index');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_vars['mainSlide']->value) {
+?>
+      <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $_smarty_tpl->tpl_vars['index']->value;?>
+" <?php if ($_smarty_tpl->tpl_vars['index']->value == '0') {?>class="active" <?php }?> ></li>
+      <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+
+      
+      <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['mainSlides']->value, 'mainSlide', false, 'index');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_vars['mainSlide']->value) {
+?>
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item <?php if ($_smarty_tpl->tpl_vars['index']->value == 0) {?> active <?php }?>" style="background-image: url('<?php echo $_smarty_tpl->tpl_vars['mainSlide']->value['pic'];?>
+')">
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="display-4"><?php echo $_smarty_tpl->tpl_vars['mainSlide']->value['title'];?>
+</h2>
+          </div>
         </div>
-    </div>
+      <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+  </div>
 </header>
+<?php }?>
 <!-- About Section -->
-<section class="page-section" style="background-color: #f4a33a;" id="about">
+<section class="page-section" style="background-color: #ffc107;" id="about"> <!--#f4a33a-->
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
@@ -197,7 +242,7 @@ creative/img/portfolio/thumbnails/6.jpg" alt="">
 </section>
 
 <!-- Contact Section -->
-<section class="page-section" id="contact">
+<!-- <section class="page-section" id="contact">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
@@ -213,11 +258,11 @@ creative/img/portfolio/thumbnails/6.jpg" alt="">
                 <div>+1 (202) 555-0149</div>
             </div>
             <div class="col-lg-4 mr-auto text-center">
-                <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+                <i class="fas fa-envelope fa-3x mb-3 text-muted"></i> -->
                 <!-- Make sure to change the email address in anchor text AND the link below! -->
-                <a class="d-block" href="mailto:lerkatao@gmail.com">lerkatao@gmail.com</a>
+                <!-- <a class="d-block" href="mailto:lerkatao@gmail.com">lerkatao@gmail.com</a>
             </div>
         </div>
     </div>
-</section><?php }
+</section> --><?php }
 }

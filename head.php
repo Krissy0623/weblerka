@@ -22,6 +22,8 @@ define('_WEB_URL', $http . $_SERVER["HTTP_HOST"] . str_replace($_SERVER["DOCUMEN
 $WEB['file_name'] = basename($_SERVER['PHP_SELF']); //index.php
 if($WEB['file_name'] == "index.php"){
   $WEB['web_title'] = "樂咖桃 x Let's talk";
+}elseif($WEB['file_name'] == "cart.php"){
+  $WEB['web_title'] = "樂咖桃 x Let's talk";
 }elseif($WEB['file_name'] == "user.php"){
   $WEB['web_title'] = "會員管理";
 }elseif($WEB['file_name'] == "prod.php"){

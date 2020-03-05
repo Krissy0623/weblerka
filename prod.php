@@ -154,43 +154,6 @@ function op_insert($sn=""){ //有給值就是編輯;沒有值就是新增
 }
 
 
-
-/*==================
-用sn取得商品檔資料
-==================*/
-function getProdsBySn($sn){
-	global $db;
-	$sql="SELECT *
-          FROM `prods`
-          WHERE `sn` = '{$sn}'
-    "; //die($sql);
-  
-    $result = $db->query($sql) or die($db->error() . $sql); /*result門票*/
-	$row = $result->fetch_assoc();
-	$row['prod'] = getFilesByKindColsnSort("prod",$sn);
-	return $row;
-}
-
-/*==================
-取得商品檔類別選項
-==================*/
-function getProdsOptions($kind){
-	global $db;
-	$sql="SELECT `sn`,`title`
-		  FROM `kinds`
-		  WHERE `kind` = '{$kind}' AND `enable` = '1'
-		  ORDER BY `sort`  
-	";
-	$result = $db->query($sql) or die($db->error() . $sql);
-	$rows=[];//array();
-	while($row = $result->fetch_assoc()){    
-	  $row['sn'] = (int)$row['sn'];//分類
-	  $row['title'] = htmlspecialchars($row['title']);//標題
-	  $rows[] = $row;
-	}
-	return $rows;
-  }
-
 /*===========================
    取得商品的數量
 ===========================*/

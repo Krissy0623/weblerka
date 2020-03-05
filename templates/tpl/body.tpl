@@ -1,20 +1,49 @@
-<!-- Masthead -->
-<header class="masthead">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center justify-content-center text-center">
-            <!-- <div class="col-lg-10 align-self-end">
-                <h1 class="text-uppercase text-white font-weight-bold">溝通，從聆聽開始。</h1>
-                <hr class="divider my-4">
-            </div>
-            <div class="col-lg-8 align-self-baseline">
-                <p class="text-white-75 font-weight-light mb-5"></p>
-                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">了解更多</a>
-            </div> -->
+<{*被theme.tpl所引入*}>
+<{if $mainSlides.0.pic}>
+<!-- 輪播圖 -->
+<style>
+  .carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  } 
+</style>
+<header>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <{foreach $mainSlides as $index => $mainSlide}>
+      <li data-target="#carouselExampleIndicators" data-slide-to="<{$index}>" <{if $index == '0'}>class="active" <{/if}> ></li>
+      <{/foreach}>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+
+      
+      <{foreach $mainSlides as $index => $mainSlide}>
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item <{if $index == 0}> active <{/if}>" style="background-image: url('<{$mainSlide.pic}>')">
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="display-4"><{$mainSlide.title}></h2>
+          </div>
         </div>
-    </div>
+      <{/foreach}>
+
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+  </div>
 </header>
+<{/if}>
 <!-- About Section -->
-<section class="page-section" style="background-color: #f4a33a;" id="about">
+<section class="page-section" style="background-color: #ffc107;" id="about"> <!--#f4a33a-->
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
@@ -162,7 +191,7 @@
 </section>
 
 <!-- Contact Section -->
-<section class="page-section" id="contact">
+<!-- <section class="page-section" id="contact">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
@@ -178,10 +207,10 @@
                 <div>+1 (202) 555-0149</div>
             </div>
             <div class="col-lg-4 mr-auto text-center">
-                <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+                <i class="fas fa-envelope fa-3x mb-3 text-muted"></i> -->
                 <!-- Make sure to change the email address in anchor text AND the link below! -->
-                <a class="d-block" href="mailto:lerkatao@gmail.com">lerkatao@gmail.com</a>
+                <!-- <a class="d-block" href="mailto:lerkatao@gmail.com">lerkatao@gmail.com</a>
             </div>
         </div>
     </div>
-</section>
+</section> -->

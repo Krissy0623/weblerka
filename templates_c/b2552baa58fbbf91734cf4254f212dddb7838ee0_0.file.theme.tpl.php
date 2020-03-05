@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-03 17:05:31
+/* Smarty version 3.1.34-dev-7, created on 2020-03-05 16:56:44
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\theme.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5e804b191d54_08375293',
+  'unifunc' => 'content_5e61213cede622_11419121',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b2552baa58fbbf91734cf4254f212dddb7838ee0' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\theme.tpl',
-      1 => 1583251451,
+      1 => 1583423473,
       2 => 'file',
     ),
   ),
@@ -22,10 +22,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:tpl/redirect.tpl' => 1,
     'file:tpl/head.tpl' => 1,
     'file:tpl/index.tpl' => 1,
+    'file:tpl/cart.tpl' => 1,
     'file:tpl/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5e5e804b191d54_08375293 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e61213cede622_11419121 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -69,10 +70,68 @@ creative/css/creative.css" rel="stylesheet">
 		<?php if ($_smarty_tpl->tpl_vars['WEB']->value['file_name'] == "index.php") {?>
 		<?php $_smarty_tpl->_subTemplateRender("file:tpl/index.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+	<?php } elseif ($_smarty_tpl->tpl_vars['WEB']->value['file_name'] == "cart.php") {?>
+		<?php $_smarty_tpl->_subTemplateRender("file:tpl/cart.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 	<?php }?>
 
 		<?php $_smarty_tpl->_subTemplateRender("file:tpl/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+	
+	  
+  	<?php if ($_SESSION['cartAmount']) {?>
+    <style>
+		.fab-fixed-wrap .fab {
+			display: block;
+			width: 56px;
+			height: 56px;
+			border-radius: 50%;
+			color: white;
+			background-color: #0c9;
+			text-align: center;
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
+			text-decoration: none;
+			display: flex;
+			line-height: 1.2;
+			align-items: center;
+			justify-content: center;
+		}
+		.fab-fixed-wrap .fab.fab-facebook {
+			/* background-color: #4080ff; */
+			background-color: #f4623a;
+		}
+		.fab-fixed-wrap .fab.fab-line {
+			background-color: #0b0;
+		}
+		.badge-counter {
+			position: absolute;
+			transform: scale(.7);
+			transform-origin: top right;
+			top: 10px;
+			right: 10px;
+			/* color:red;
+			background: #fff; */
+		}
+    </style>
+    <div class="fab-fixed-wrap with-navbar-bottom" style="bottom: 4.6875rem;position: fixed;z-index: 1035;right: .9375rem;bottom: .9375rem;">
+		<a href="cart.php?op=order_form" class="fab fab-facebook mp-click" data-toggle="tooltip" title="你選擇了<?php echo $_SESSION['cartAmount'];?>
+餐點">
+			<i class="fas fa-cart-plus"></i>  
+			<span class="badge badge-danger badge-counter"><?php echo $_SESSION['cartAmount'];?>
+</span> 
+		</a>
+    </div>
+
+    <?php echo '<script'; ?>
+>
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
+	<?php echo '</script'; ?>
+>
+	
+  	<?php }?>
+
 	
 <!-- Custom scripts for this template -->
 <?php echo '<script'; ?>

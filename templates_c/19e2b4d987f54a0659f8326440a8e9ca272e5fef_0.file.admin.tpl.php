@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-04 16:43:08
+/* Smarty version 3.1.34-dev-7, created on 2020-03-05 15:16:43
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5fcc8c9a0d76_27063743',
+  'unifunc' => 'content_5e6109cbc94795_86789669',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '19e2b4d987f54a0659f8326440a8e9ca272e5fef' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\admin.tpl',
-      1 => 1583336585,
+      1 => 1583417799,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:tpl/slide.tpl' => 1,
   ),
 ),false)) {
-function content_5e5fcc8c9a0d76_27063743 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6109cbc94795_86789669 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -100,9 +100,9 @@ admin/vendor/bootstrap/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
             <li class="nav-item active">
               <a class="nav-link" href="index.php">首頁 <span class="sr-only"></span></a>
             </li>
-            <!-- <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="cart.php">購物車</a>
-            </li> -->
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown

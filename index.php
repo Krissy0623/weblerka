@@ -50,18 +50,16 @@ switch ($op){
 
     default: 
         $op = "op_list";
+        $mainSlides = getMenus("mainSlide",true);
+        $smarty->assign("mainSlides", $mainSlides);
         break;  
 }
 
 /*---- 將變數送至樣版----*/
+$mainMenus = getMenus("mainMenu");
+  $smarty->assign("mainMenus", $mainMenus,true);
 $smarty->assign("WEB", $WEB);
 $smarty->assign("op", $op); //送去樣板就會顯示,但要下指令<{$op}>
-
-$smarty->assign("a0", "關於我們");
-$smarty->assign("a1", "服務項目");
-$smarty->assign("a2", "寶貝畫畫");
-$smarty->assign("a3", "線上預約");
-$smarty->assign("a4", "聯絡我們");
 
 /*---- 程式結尾-----*/
 $smarty->display('theme.tpl');
