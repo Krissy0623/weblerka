@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-02 13:22:08
+/* Smarty version 3.1.34-dev-7, created on 2020-03-08 11:49:27
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\reservation_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5cfa70b38b90_55473510',
+  'unifunc' => 'content_5e64cdb7ae0692_75920502',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef0036c1423cab5b60fc788dfae422a984a16f76' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\reservation_form.tpl',
-      1 => 1583151586,
+      1 => 1583506262,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e5cfa70b38b90_55473510 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e64cdb7ae0692_75920502 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .main-box{
     width: 100%;
@@ -126,7 +126,7 @@ small{
     </div>
         <div class="row mt-4">
             <!--電子郵件地址-->              
-            <div class="col-sm-6">
+            <div class="col-sm-12 col-md-12 col-lg-6">
                 <div class="form-group">
                     <label>電子郵件地址<span class="text-danger"> *</span>
                     <small>必填</small>
@@ -135,7 +135,7 @@ small{
                 </div>
             </div> 
             <!--家長姓名-->              
-            <div class="col-sm-3">
+            <div class="col-sm-12 col-md-6 col-lg-3">
                 <div class="form-group">
                     <label>家長姓名<span class="text-danger">*</span>
                     <small>必填</small>
@@ -144,7 +144,7 @@ small{
                 </div>
             </div>
             <!--家長的LINE ID名稱-->              
-            <div class="col-sm-3">
+            <div class="col-sm-12 col-md-6 col-lg-3">
                 <div class="form-group">
                     <label>家長的LINE ID名稱<span class="text-danger">*</span>
                     <small>方便溝通前聯繫與確認，沒有line請留手機號碼</small>
@@ -153,7 +153,7 @@ small{
                 </div>
             </div>
             <!--預約項目（30分鐘為限）-->                
-            <div class="col-sm-6">  
+            <div class="col-sm-12 col-md-6">  
                 <div class="form-group">
                     <label>預約項目（30分鐘為限）<span class="text-danger">*</span>
                     <small>必填</small>
@@ -166,7 +166,7 @@ small{
                 </div>
             </div>
             <!--希望預約的時段-->               
-            <div class="col-sm-3">   
+            <div class="col-sm-12 col-md-6 col-lg-3">   
                 <div class="form-group">
                     <label>希望預約的時段一<span class="text-danger">*</span>
                     <small>必填</small>
@@ -184,7 +184,7 @@ small{
                 </div>
             </div>
             <!--希望預約的時段-->  
-            <div class="col-sm-3">  
+            <div class="col-sm-12 col-md-6 col-lg-3">  
                 <div class="form-group">
                     <label>希望預約的時段二<span class="text-danger">*</span>
                     <small>必填</small>
@@ -202,7 +202,7 @@ small{
                 </div>
             </div>
             <!--寶貝的名字-->               
-            <div class="col-sm-3">  
+            <div class="col-sm-12 col-md-6 col-lg-3">  
                 <div class="form-group">
                     <label>寶貝的名字<span class="text-danger"> *</span>
                     <small>請填寫最常稱呼的名字，千萬別填寫生氣時呼叫的名字</small>
@@ -211,7 +211,7 @@ small{
                 </div>
             </div>
             <!--毛孩子年齡--> 
-            <div class="col-sm-3">  
+            <div class="col-sm-12 col-md-6 col-lg-3">  
                 <div class="form-group">
                     <label>毛孩子年齡<span class="text-danger"> *</span>
                     <small>不接受六個月以下的寶貝，因為還太小了，有些問題可能還不懂得如何回答。</small>
@@ -220,7 +220,7 @@ small{
                 </div>
             </div>
             <!--請問是寶貝的主要照顧人嗎?--> 
-            <div class="col-sm-6"> 
+            <div class="col-sm-12 col-md-6"> 
                 <div class="form-group">
                     <label>請問是寶貝的主要照顧人嗎?<span class="text-danger">*</span>
                     <small>建議是由照顧人來報名，寶貝的溝通意願會比較高<br><br></small>
@@ -234,7 +234,7 @@ small{
                 </div>
             </div>
             <!--寶貝的性別--> 
-            <div class="col-sm-3"> 
+            <div class="col-sm-12 col-md-3"> 
                 <div class="form-group">
                     <label>寶貝的性別<span class="text-danger">*</span>
                     <small>必填</small>
@@ -247,7 +247,7 @@ small{
                 </div>
             </div>
             <!--寶貝的種類--> 
-            <div class="col-sm-3"> 
+            <div class="col-sm-12 col-md-3"> 
                 <div class="form-group">
                     <label>寶貝的種類<span class="text-danger">*</span>
                     <small>必填</small>
@@ -260,7 +260,7 @@ small{
                 </div>
             </div>
             <!--與寶貝間的關係-->
-            <div class="col-sm-3"> 
+            <div class="col-sm-12 col-md-6 col-lg-3"> 
                 <div class="form-group">
                     <label>與寶貝間的關係<span class="text-danger">*</span>
                     <small>例如：我是媽媽、我是爸爸、中途姐姐等</small>

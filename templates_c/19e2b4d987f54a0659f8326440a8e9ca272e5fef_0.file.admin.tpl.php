@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-05 15:16:43
+/* Smarty version 3.1.34-dev-7, created on 2020-03-08 11:49:41
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e6109cbc94795_86789669',
+  'unifunc' => 'content_5e64cdc57850f7_20691833',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '19e2b4d987f54a0659f8326440a8e9ca272e5fef' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\admin.tpl',
-      1 => 1583417799,
+      1 => 1583511008,
       2 => 'file',
     ),
   ),
@@ -24,9 +24,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:tpl/kind.tpl' => 1,
     'file:tpl/menu.tpl' => 1,
     'file:tpl/slide.tpl' => 1,
+    'file:tpl/order.tpl' => 1,
   ),
 ),false)) {
-function content_5e6109cbc94795_86789669 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e64cdc57850f7_20691833 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -78,6 +79,7 @@ admin/vendor/bootstrap/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
         <a href="user.php" class="list-group-item list-group-item-action bg-light">會員管理</a> <!--預約管理-->
         <a href="#" class="list-group-item list-group-item-action bg-light">聯絡事項</a>
         <a href="prod.php" class="list-group-item list-group-item-action bg-light">商品管理</a>
+        <a href="order.php" class="list-group-item list-group-item-action bg-light">訂單管理</a>
         <a href="kind.php" class="list-group-item list-group-item-action bg-light">[ 商品 / 訂單 ] 類別管理</a>
         <a href="menu.php" class="list-group-item list-group-item-action bg-light">[ 導覽列 / 購物車 ] 選單管理</a>
         <a href="slide.php" class="list-group-item list-group-item-action bg-light">輪播圖管理</a>
@@ -138,6 +140,9 @@ admin/vendor/bootstrap/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
 ?>
                 <?php } elseif ($_smarty_tpl->tpl_vars['WEB']->value['file_name'] == "slide.php") {?>  
                   <?php $_smarty_tpl->_subTemplateRender("file:tpl/slide.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+                <?php } elseif ($_smarty_tpl->tpl_vars['WEB']->value['file_name'] == "order.php") {?>  
+                <?php $_smarty_tpl->_subTemplateRender("file:tpl/order.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
                   
                 <?php }?>

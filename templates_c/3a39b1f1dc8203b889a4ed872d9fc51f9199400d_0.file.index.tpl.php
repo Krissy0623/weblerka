@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-03 17:05:31
+/* Smarty version 3.1.34-dev-7, created on 2020-03-08 11:37:47
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5e804b1bdeb3_12430161',
+  'unifunc' => 'content_5e64cafb2e41b1_28061330',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -27,7 +27,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:tpl/body.tpl' => 1,
   ),
 ),false)) {
-function content_5e5e804b1bdeb3_12430161 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e64cafb2e41b1_28061330 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['op']->value == "contact_form") {?>
     <?php $_smarty_tpl->_subTemplateRender("file:tpl/contact_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 } elseif ($_smarty_tpl->tpl_vars['op']->value == "okcontact") {?>

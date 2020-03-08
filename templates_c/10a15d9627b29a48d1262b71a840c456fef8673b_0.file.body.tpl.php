@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-05 15:58:17
+/* Smarty version 3.1.34-dev-7, created on 2020-03-08 11:48:43
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\body.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e611389d42cf9_03215533',
+  'unifunc' => 'content_5e64cd8b2f2107_58777432',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '10a15d9627b29a48d1262b71a840c456fef8673b' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\body.tpl',
-      1 => 1583420146,
+      1 => 1583664520,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e611389d42cf9_03215533 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e64cd8b2f2107_58777432 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['mainSlides']->value[0]['pic']) {?>
 <!-- 輪播圖 -->
 <style>
@@ -141,30 +141,30 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <div class="row no-gutters">
         <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/fullsize/18.jpg">
+creative/img/portfolio/fullsize/24.jpg">
                 <img class="img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/thumbnails/18.jpg" alt="">
+creative/img/portfolio/thumbnails/24.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
-                        Category
+                        【個案分享 之 為什麼要喵喵叫】
                     </div>
                     <div class="project-name">
-                        Project Name
+                        #傲嬌 #眼裡只有媽媽
                     </div>
                 </div>
             </a>
         </div>
         <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/fullsize/19.jpg">
+creative/img/portfolio/fullsize/25.jpg">
                 <img class="img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/thumbnails/19.jpg" alt="">
+creative/img/portfolio/thumbnails/25.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
-                        Category
+                        【個案分享 之 把拔不能死掉】
                     </div>
                     <div class="project-name">
-                        Project Name
+                        #跟把拔一樣自戀 #很害怕把拔死掉<br>#想要多吃點肉肉
                     </div>
                 </div>
             </a>
@@ -176,10 +176,10 @@ creative/img/portfolio/fullsize/20.jpg">
 creative/img/portfolio/thumbnails/20.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
-                        Category
+                        【個案分享 之 我也可以照顧妹妹】
                     </div>
                     <div class="project-name">
-                        Project Name
+                        #第一次被催促溝通就上手<br>#終於進入正式溝通
                     </div>
                 </div>
             </a>
@@ -191,10 +191,10 @@ creative/img/portfolio/fullsize/21.jpg">
 creative/img/portfolio/thumbnails/21.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
-                        Category
+                        【個案分享 之 家有雙寶超歡樂(上篇-老大汪)】
                     </div>
                     <div class="project-name">
-                        Project Name
+                        #老大冷眼地表示這個傢伙又再耍寶了
                     </div>
                 </div>
             </a>
@@ -206,25 +206,25 @@ creative/img/portfolio/fullsize/22.jpg">
 creative/img/portfolio/thumbnails/22.jpg" alt="">
                 <div class="portfolio-box-caption">
                     <div class="project-category text-white-50">
-                        Category
+                        【個案分享 之 家有雙寶超歡樂(下篇-老么汪)】
                     </div>
                     <div class="project-name">
-                        Project Name
+                        #雙寶是分別聊天#個性是天差地遠
                     </div>
                 </div>
             </a>
         </div>
         <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/fullsize/6.jpg">
+creative/img/portfolio/fullsize/23.jpg">
                 <img class="img-fluid" src="<?php echo $_smarty_tpl->tpl_vars['xoImgUrl']->value;?>
-creative/img/portfolio/thumbnails/6.jpg" alt="">
+creative/img/portfolio/thumbnails/23.jpg" alt="">
                 <div class="portfolio-box-caption p-3">
                     <div class="project-category text-white-50">
-                        Category
+                        【故事分享 之 心情不好時就摸摸我吧】
                     </div>
                     <div class="project-name">
-                        Project Name
+                        #暖男 #愛唱歌的暖男
                     </div>
                 </div>
             </a>

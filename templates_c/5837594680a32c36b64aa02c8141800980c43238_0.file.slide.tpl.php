@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-03 17:08:55
+/* Smarty version 3.1.34-dev-7, created on 2020-03-08 11:52:06
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\slide.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5e81175e74b6_82252547',
+  'unifunc' => 'content_5e64ce566bec67_98871611',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e5e81175e74b6_82252547 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e64ce566bec67_98871611 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['op']->value == "op_list") {?>
     <table class="table table-striped table-bordered table-hover table-sm">
         <thead>

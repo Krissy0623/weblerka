@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-02-18 15:51:58
+/* Smarty version 3.1.34-dev-7, created on 2020-03-08 11:37:47
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\redirect.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e4bfa0e9b8d86_55221547',
+  'unifunc' => 'content_5e64cafb296296_73647667',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e4bfa0e9b8d86_55221547 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e64cafb296296_73647667 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- 你有送轉向訊息我就送這一段 -->
 <?php if ($_smarty_tpl->tpl_vars['redirect']->value) {?> 
   <!--sweetalert2-->

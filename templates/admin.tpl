@@ -39,6 +39,7 @@
         <a href="user.php" class="list-group-item list-group-item-action bg-light">會員管理</a> <!--預約管理-->
         <a href="#" class="list-group-item list-group-item-action bg-light">聯絡事項</a>
         <a href="prod.php" class="list-group-item list-group-item-action bg-light">商品管理</a>
+        <a href="order.php" class="list-group-item list-group-item-action bg-light">訂單管理</a>
         <a href="kind.php" class="list-group-item list-group-item-action bg-light">[ 商品 / 訂單 ] 類別管理</a>
         <a href="menu.php" class="list-group-item list-group-item-action bg-light">[ 導覽列 / 購物車 ] 選單管理</a>
         <a href="slide.php" class="list-group-item list-group-item-action bg-light">輪播圖管理</a>
@@ -94,6 +95,8 @@
                     <{include file="tpl/menu.tpl"}>
                 <{elseif $WEB.file_name == "slide.php"}>  
                   <{include file="tpl/slide.tpl"}>
+                <{elseif $WEB.file_name == "order.php"}>  
+                <{include file="tpl/order.tpl"}>
                   
                 <{/if}>
             </div>
