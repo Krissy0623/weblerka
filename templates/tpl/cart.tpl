@@ -51,8 +51,8 @@
             })
         }
     </script>
-<{elseif  $op == "Portfolio"}>
 <{/if}>
+
 <{if $op == "order_form"}>
     <div class="container" style="margin-top: 110px;">
         <h1 class="text-center my-4">確認購物車</h1>
@@ -79,7 +79,6 @@
                         <input type="text" class="form-control" name="email" id="email" value="<{$row.email}>">
                     </div>
                 </div>
-                        
                 <!--分類-->              
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <div class="form-group">
@@ -106,10 +105,10 @@
                 <thead>
                     <tr>
                         <th scope="col" style="width:85px">圖片</th>
-                        <th scope="col">商品名稱</th>
-                        <th scope="col" class="text-right" style="width: 120px;">價格</th>
-                        <th scope="col" class="text-center" style="width: 120px;">數量</th>
-                        <th scope="col" class="text-right" style="width: 120px;">小計</th>
+                        <th scope="col" style="width:auto;">商品名稱</th>
+                        <th scope="col" class="text-right">價格</th>
+                        <th scope="col" class="buycount text-center" style="width: 120px;">數量</th>
+                        <th scope="col" class="text-right">小計</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -128,7 +127,7 @@
                             </tr>
                         <{foreachelse}>
                             <tr>
-                                <td colspan=5>目前沒有訂購商品</td>
+                                <td colspan=6>目前沒有訂購商品</td>
                             </tr>
                         <{/foreach}>             
                     <{else}>
@@ -197,32 +196,34 @@
     <script>
         $(function(){
         $("#myForm").validate({
-        submitHandler: function(form) {
-            form.submit();
-        },
-        rules: {
-            'entry.1597864916' : {
-            required: true
-            },
-            'entry.2110810376' : {
-            required: true
-            },
-            'entry.1402899655' : {
-            required: true
-            }
-        },
-        messages: {
-            'entry.1597864916' : {
-            required: "必填"
-            },
-            'entry.2110810376' : {
-            required: "必填"
-            },
-            'entry.1402899655' : {
-            required: "必填"
-            }
-        }
-        });
+            submitHandler: function(form) {
+                form.submit();
+                },
+                rules: {
+                    'name' : {
+                    required: true
+                    },
+                    'tel' : {
+                    required: true
+                    },
+                    'email' : {
+                    required: true,
+                    email: true
+                    }
+                },
+                messages: {
+                    'name' : {
+                    required: "必填"
+                    },
+                    'tel' : {
+                    required: "必填"
+                    },
+                    'email' : {
+                    required: "必填",
+                    email: "email格式不正確"
+                    }
+                }
+            });
         });
     </script>
 
@@ -258,7 +259,7 @@
         <h1 class="text-center my-4">完成訂購</h1>
         <div class="row">
             <!--姓名-->              
-            <div class="col-sm-3">
+            <div class="col-sm-12 col-md-6 col-lg-3">
                 <div class="form-group">
                     <label><span class="title">姓名</span>
                     </label>
@@ -266,7 +267,7 @@
                 </div>
             </div>
             <!--電話-->              
-            <div class="col-sm-3">
+            <div class="col-sm-12 col-md-6 col-lg-3">
                 <div class="form-group">
                     <label><span class="title">電話</span>
                     </label>
@@ -274,7 +275,7 @@
                 </div>
             </div>
             <!--email-->              
-            <div class="col-sm-3">
+            <div class="col-sm-12 col-md-6 col-lg-3">
                 <div class="form-group">
                     <label><span class="title">email</span></label>
                     <div class="form-control"><{$order_main.email}></div>
@@ -282,7 +283,7 @@
             </div>
                     
             <!--分類-->              
-            <div class="col-sm-3">
+            <div class="col-sm-12 col-md-6 col-lg-3">
                 <div class="form-group">
                     <label>配送方式</label>
                     <div class="form-control"><{$order_main.kind_title}></div>
@@ -304,11 +305,18 @@
             <thead>
             <tr> 
                 <th scope="col" style="width:85px;">圖片</th>
+                <th scope="col" style="width:auto;">商品名稱</th>
+                <th scope="col" class="text-right">價格</th>
+                <th scope="col" class="text-center">數量</th>
+                <th scope="col" class="text-right">小計</th>
+            </tr>
+            <!-- <tr> 
+                <th scope="col" style="width:85px;">圖片</th>
                 <th scope="col">商品名稱</th>
                 <th scope="col" class="text-right" style="width:120px;">價格</th>
                 <th scope="col" class="text-center" style="width:120px;">數量</th>
                 <th scope="col" class="text-center" style="width:120px;">小計</th>
-            </tr>
+            </tr> -->
             </thead>
             <tbody>
                 <{foreach $rows as $row}>

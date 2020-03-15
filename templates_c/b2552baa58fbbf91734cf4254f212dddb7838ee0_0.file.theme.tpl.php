@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-08 11:37:47
+/* Smarty version 3.1.34-dev-7, created on 2020-03-11 14:53:58
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\theme.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e64cafb24f3d6_01310754',
+  'unifunc' => 'content_5e68ed76bca459_61096299',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b2552baa58fbbf91734cf4254f212dddb7838ee0' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\theme.tpl',
-      1 => 1583423473,
+      1 => 1583934834,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:tpl/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5e64cafb24f3d6_01310754 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e68ed76bca459_61096299 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -79,7 +79,7 @@ creative/css/creative.css" rel="stylesheet">
 ?>
 	
 	  
-  	<?php if ($_SESSION['cartAmount']) {?>
+  	<?php if ($_SESSION['cartAmount'] && $_smarty_tpl->tpl_vars['op']->value != "order_form") {?>
     <style>
 		.fab-fixed-wrap .fab {
 			display: block;
@@ -114,13 +114,14 @@ creative/css/creative.css" rel="stylesheet">
 		}
     </style>
     <div class="fab-fixed-wrap with-navbar-bottom" style="bottom: 4.6875rem;position: fixed;z-index: 1035;right: .9375rem;bottom: .9375rem;">
-		<a href="cart.php?op=order_form" class="fab fab-facebook mp-click" data-toggle="tooltip" title="你選擇了<?php echo $_SESSION['cartAmount'];?>
-餐點">
+		<a href="cart.php?op=order_form" class="fab fab-facebook mp-click" data-toggle="tooltip" title="前往結帳">
 			<i class="fas fa-cart-plus"></i>  
 			<span class="badge badge-danger badge-counter"><?php echo $_SESSION['cartAmount'];?>
 </span> 
 		</a>
-    </div>
+	</div>
+	<!--title="你選擇了<?php echo $_SESSION['cartAmount'];?>
+餐點"-->
 
     <?php echo '<script'; ?>
 >

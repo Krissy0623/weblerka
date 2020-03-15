@@ -7,6 +7,15 @@ $sn = system_CleanVars($_REQUEST, 'sn', '', 'int');
 
 /* 程式流程 */
 switch ($op){    
+    case "contact_insert" :
+      $msg = contact_insert();
+      redirect_header("index.php", $msg , 5000);
+      exit;
+
+    case "checkUname" :
+      echo json_encode(checkUname());
+      exit;
+
     case "reg" :
       $msg = reg();
       redirect_header("index.php", '註冊成功', 3000);
@@ -52,6 +61,8 @@ switch ($op){
         $op = "op_list";
         $mainSlides = getMenus("mainSlide",true);
         $smarty->assign("mainSlides", $mainSlides);
+        $mainDraws = getMenus("mainDraw",true);
+        $smarty->assign("mainDraws", $mainDraws);
         break;  
 }
 
@@ -65,6 +76,20 @@ $smarty->assign("op", $op); //送去樣板就會顯示,但要下指令<{$op}>
 $smarty->display('theme.tpl');
 
 /*---- 函式區-------*/
+/*####################################################
+  AJAX 檢查帳號是否重覆
+  驗證不過 => false ， 驗證通過 => true
+####################################################*/
+function checkUname() {
+  global $db;
+  $uname = system_CleanVars($_REQUEST, 'uname', '', 'string');
+
+  if(check_uname($uname)){
+    return false;//帳號有人使用，驗證不過
+  }
+  return true;
+} 
+
 function reservation_form(){
 
 }
@@ -73,7 +98,28 @@ function okreservation(){
 
 }
 
+function contact_insert(){
+  global $db;
+  
+  $_POST['name'] = db_filter($_POST['name'], 'name');
+  $_POST['tel'] = db_filter($_POST['tel'], 'tel');
+  $_POST['email'] = db_filter($_POST['email'], 'email');
+  $_POST['content'] = db_filter($_POST['content'], 'content');
+  $_POST['date'] = strtotime("now");
+  
+  $sql="INSERT INTO `contacts` 
+                    (`name`, `tel`, `email`, `content`, `date`)
+                    VALUES 
+                    ('{$_POST['name']}', '{$_POST['tel']}', '{$_POST['email']}', '{$_POST['content']}', '{$_POST['date']}')  
+  ";
+  $result = $db->query($sql) or die($db->error() . $sql);
+  return "我們已收到您的聯絡事項，將儘快與您聯絡！";
+}
+
 function contact_form(){
+  global $smarty;
+  $row['op'] = "contact_insert";
+  $smarty->assign("row", $row);
 
 }
 
@@ -166,6 +212,24 @@ function logout(){
     // print_r($_SESSION);die(); 
 }
 
+/*=======================
+  檢查帳號是否有人使用
+  有人使用 傳回 true
+  無人使用 傳回 false
+=======================*/
+function check_uname($uname){
+  global $db;
+  $sql="SELECT count(*) as count
+        FROM `users`
+        WHERE `uname`='{$uname}'
+  ";    
+  $result = $db->query($sql) or die($db->error() . $sql);
+  $row = $result->fetch_assoc();
+
+  if($row['count'])return true;
+  return false;  
+}
+
 function reg() {
     global $db; /*要使用請global才可以使用*/
     #過濾變數 /*外來的變數一定要先過濾！！有打過濾變數,如果輸入資料有特殊字元「單引號」也可以註冊*/
@@ -178,6 +242,12 @@ function reg() {
     #加密處理
     if($_POST['pass'] != $_POST['chk_pass']){
       redirect_header("index.php?op=reg_form","密碼不一致");
+      exit;
+    }
+
+    #檢查帳號是否重覆
+    if(check_uname($_POST['uname'])){
+      redirect_header("index.php?op=reg_form","帳號已有人使用");
       exit;
     }
     

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-08 11:52:01
+/* Smarty version 3.1.34-dev-7, created on 2020-03-11 16:26:42
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e64ce514e17f0_36492012',
+  'unifunc' => 'content_5e6903320a8c19_24842737',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2861c02cbc7ca7212a4bf018d6cce3c879ca1ac7' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\cart.tpl',
-      1 => 1583510905,
+      1 => 1583940396,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e64ce514e17f0_36492012 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6903320a8c19_24842737 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['op']->value == "op_list") {?>
     <!-- Page Content -->
     <div class="container" style="margin-top: 110px;">
@@ -94,9 +94,9 @@ class/sweetalert2/sweetalert2.min.js"><?php echo '</script'; ?>
         }
     <?php echo '</script'; ?>
 >
-<?php } elseif ($_smarty_tpl->tpl_vars['op']->value == "Portfolio") {
-}
-if ($_smarty_tpl->tpl_vars['op']->value == "order_form") {?>
+<?php }?>
+
+<?php if ($_smarty_tpl->tpl_vars['op']->value == "order_form") {?>
     <div class="container" style="margin-top: 110px;">
         <h1 class="text-center my-4">確認購物車</h1>
         <form  role="form" action="cart.php" method="post" id="myForm" >        
@@ -125,7 +125,6 @@ if ($_smarty_tpl->tpl_vars['op']->value == "order_form") {?>
 ">
                     </div>
                 </div>
-                        
                 <!--分類-->              
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <div class="form-group">
@@ -161,10 +160,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <thead>
                     <tr>
                         <th scope="col" style="width:85px">圖片</th>
-                        <th scope="col">商品名稱</th>
-                        <th scope="col" class="text-right" style="width: 120px;">價格</th>
-                        <th scope="col" class="text-center" style="width: 120px;">數量</th>
-                        <th scope="col" class="text-right" style="width: 120px;">小計</th>
+                        <th scope="col" style="width:auto;">商品名稱</th>
+                        <th scope="col" class="text-right">價格</th>
+                        <th scope="col" class="buycount text-center" style="width: 120px;">數量</th>
+                        <th scope="col" class="text-right">小計</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -196,7 +195,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['sn']->value => $_smarty_tpl->tpl_vars
 } else {
 ?>
                             <tr>
-                                <td colspan=5>目前沒有訂購商品</td>
+                                <td colspan=6>目前沒有訂購商品</td>
                             </tr>
                         <?php
 }
@@ -294,32 +293,34 @@ class/sweetalert2/sweetalert2.min.js"><?php echo '</script'; ?>
 >
         $(function(){
         $("#myForm").validate({
-        submitHandler: function(form) {
-            form.submit();
-        },
-        rules: {
-            'entry.1597864916' : {
-            required: true
-            },
-            'entry.2110810376' : {
-            required: true
-            },
-            'entry.1402899655' : {
-            required: true
-            }
-        },
-        messages: {
-            'entry.1597864916' : {
-            required: "必填"
-            },
-            'entry.2110810376' : {
-            required: "必填"
-            },
-            'entry.1402899655' : {
-            required: "必填"
-            }
-        }
-        });
+            submitHandler: function(form) {
+                form.submit();
+                },
+                rules: {
+                    'name' : {
+                    required: true
+                    },
+                    'tel' : {
+                    required: true
+                    },
+                    'email' : {
+                    required: true,
+                    email: true
+                    }
+                },
+                messages: {
+                    'name' : {
+                    required: "必填"
+                    },
+                    'tel' : {
+                    required: "必填"
+                    },
+                    'email' : {
+                    required: "必填",
+                    email: "email格式不正確"
+                    }
+                }
+            });
         });
     <?php echo '</script'; ?>
 >
@@ -358,7 +359,7 @@ class/sweetalert2/sweetalert2.min.js"><?php echo '</script'; ?>
         <h1 class="text-center my-4">完成訂購</h1>
         <div class="row">
             <!--姓名-->              
-            <div class="col-sm-3">
+            <div class="col-sm-12 col-md-6 col-lg-3">
                 <div class="form-group">
                     <label><span class="title">姓名</span>
                     </label>
@@ -367,7 +368,7 @@ class/sweetalert2/sweetalert2.min.js"><?php echo '</script'; ?>
                 </div>
             </div>
             <!--電話-->              
-            <div class="col-sm-3">
+            <div class="col-sm-12 col-md-6 col-lg-3">
                 <div class="form-group">
                     <label><span class="title">電話</span>
                     </label>
@@ -376,7 +377,7 @@ class/sweetalert2/sweetalert2.min.js"><?php echo '</script'; ?>
                 </div>
             </div>
             <!--email-->              
-            <div class="col-sm-3">
+            <div class="col-sm-12 col-md-6 col-lg-3">
                 <div class="form-group">
                     <label><span class="title">email</span></label>
                     <div class="form-control"><?php echo $_smarty_tpl->tpl_vars['order_main']->value['email'];?>
@@ -385,7 +386,7 @@ class/sweetalert2/sweetalert2.min.js"><?php echo '</script'; ?>
             </div>
                     
             <!--分類-->              
-            <div class="col-sm-3">
+            <div class="col-sm-12 col-md-6 col-lg-3">
                 <div class="form-group">
                     <label>配送方式</label>
                     <div class="form-control"><?php echo $_smarty_tpl->tpl_vars['order_main']->value['kind_title'];?>
@@ -409,11 +410,18 @@ class/sweetalert2/sweetalert2.min.js"><?php echo '</script'; ?>
             <thead>
             <tr> 
                 <th scope="col" style="width:85px;">圖片</th>
+                <th scope="col" style="width:auto;">商品名稱</th>
+                <th scope="col" class="text-right">價格</th>
+                <th scope="col" class="text-center">數量</th>
+                <th scope="col" class="text-right">小計</th>
+            </tr>
+            <!-- <tr> 
+                <th scope="col" style="width:85px;">圖片</th>
                 <th scope="col">商品名稱</th>
                 <th scope="col" class="text-right" style="width:120px;">價格</th>
                 <th scope="col" class="text-center" style="width:120px;">數量</th>
                 <th scope="col" class="text-center" style="width:120px;">小計</th>
-            </tr>
+            </tr> -->
             </thead>
             <tbody>
                 <?php

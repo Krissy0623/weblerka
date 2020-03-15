@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-08 11:37:47
+/* Smarty version 3.1.34-dev-7, created on 2020-03-11 15:10:27
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\head.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e64cafb2d3004_60500492',
+  'unifunc' => 'content_5e68f153df5da6_60920735',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '58e7e28752ce5a5c26fd1f8da57f5398ef503147' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\head.tpl',
-      1 => 1583418171,
+      1 => 1583935127,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e64cafb2d3004_60500492 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e68f153df5da6_60920735 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
     #mainNav {
       background-color: rgba(255, 193, 7, .7);
@@ -30,7 +30,7 @@ function content_5e64cafb2d3004_60500492 (Smarty_Internal_Template $_smarty_tpl)
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" style="margin-left: -50px;" href="index.php"><?php echo $_smarty_tpl->tpl_vars['WEB']->value['web_title'];?>
+        <a class="navbar-brand js-scroll-trigger" href="index.php"><?php echo $_smarty_tpl->tpl_vars['WEB']->value['web_title'];?>
 </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -51,6 +51,16 @@ foreach ($_from as $_smarty_tpl->tpl_vars['mainMenu']->value) {
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
+                  
+                <?php if ($_SESSION['cartAmount'] && $_smarty_tpl->tpl_vars['op']->value != "order_form") {?>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="cart.php?op=order_form">
+                            <i class="fas fa-cart-plus"></i> 
+                        </a>
+                    </li>
+                <?php }?>
+
                 <?php if ($_SESSION['user']['kind'] === 1) {?> 
                                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="user.php">後台</a>

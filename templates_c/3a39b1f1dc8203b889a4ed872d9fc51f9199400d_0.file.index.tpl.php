@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-08 11:37:47
+/* Smarty version 3.1.34-dev-7, created on 2020-03-15 12:30:58
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e64cafb2e41b1_28061330',
+  'unifunc' => 'content_5e6e11f2b4f5f5_50342465',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3a39b1f1dc8203b889a4ed872d9fc51f9199400d' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\index.tpl',
-      1 => 1583251415,
+      1 => 1584271819,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:tpl/body.tpl' => 1,
   ),
 ),false)) {
-function content_5e64cafb2e41b1_28061330 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6e11f2b4f5f5_50342465 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['op']->value == "contact_form") {?>
     <?php $_smarty_tpl->_subTemplateRender("file:tpl/contact_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 } elseif ($_smarty_tpl->tpl_vars['op']->value == "okcontact") {?>

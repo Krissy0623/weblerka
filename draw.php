@@ -7,25 +7,25 @@ if($_SESSION['user']['kind'] !== 1)redirect_header("index.php", '您沒有權限
 /* 過濾變數，設定預設值 */
 $op = system_CleanVars($_REQUEST, 'op', 'op_list', 'string');
 $sn = system_CleanVars($_REQUEST, 'sn', '', 'int');
-$kind = system_CleanVars($_REQUEST, 'kind', 'mainSlide', 'string');
-$kind = "mainSlide";
+$kind = system_CleanVars($_REQUEST, 'kind', 'mainDraw', 'string');
+$kind = "mainDraw";
 // echo $op;die();
  
 /* 程式流程 */
 switch ($op){
   case "op_delete" :
     $msg = op_delete($kind,$sn);
-    redirect_header("slide.php?kind={$kind}", $msg, 3000);
+    redirect_header("draw.php?kind={$kind}", $msg, 3000);
     exit;
 
   case "op_insert" :
     $msg = op_insert($kind);
-    redirect_header("slide.php?kind={$kind}", $msg, 3000);
+    redirect_header("draw.php?kind={$kind}", $msg, 3000);
     exit;
 
   case "op_update" :
     $msg = op_insert($kind,$sn);
-    redirect_header("slide.php", $msg, 3000);
+    redirect_header("draw.php", $msg, 3000);
     exit;
 
   case "op_form" :
@@ -53,12 +53,12 @@ function op_delete($kind,$sn){
   # 2.刪除files資料表
   delFilesByKindColsnSort($kind,$sn,1);
 
-  #刪除輪播圖資料表
+  #刪除寶貝畫畫資料表
   $sql="DELETE FROM `kinds`
         WHERE `sn` = '{$sn}'
   ";
   $db->query($sql) or die($db->error() . $sql);
-  return "輪播圖資料刪除成功";
+  return "寶貝畫畫資料刪除成功";
 }
 
 function op_insert($kind,$sn=""){
@@ -69,8 +69,7 @@ function op_insert($kind,$sn=""){
   $_POST['kind'] = db_filter($_POST['kind'], ''); //分類
   $_POST['enable'] = db_filter($_POST['enable'], ''); //狀態
   $_POST['sort'] = db_filter($_POST['sort'], ''); //排序
-  $_POST['url'] = db_filter($_POST['url'], '');//網址
-  $_POST['target'] = db_filter($_POST['target'], ''); //外連 
+  $_POST['content'] = db_filter($_POST['content'], '');//網址
 
   if($sn){
     $sql="UPDATE  `kinds` SET
@@ -78,21 +77,20 @@ function op_insert($kind,$sn=""){
                   `enable` = '{$_POST['enable']}',
                   `sort` = '{$_POST['sort']}',
                   `kind` = '{$_POST['kind']}',
-                  `url` = '{$_POST['url']}',
-                  `target` = '{$_POST['target']}'
+                  `content` = '{$_POST['content']}'
                   WHERE `sn` = '{$_POST['sn']}'
     ";
     $db->query($sql) or die($db->error() . $sql);
-    $msg = "輪播圖資料更新成功";
+    $msg = "寶貝畫畫資料更新成功";
   }else{
     $sql="INSERT INTO `kinds` 
-    (`title`, `enable`, `sort`, `kind`, `url`, `target`)
+    (`title`, `enable`, `sort`, `kind`, `content`)
     VALUES 
-    ('{$_POST['title']}', '{$_POST['enable']}', '{$_POST['sort']}', '{$_POST['kind']}', '{$_POST['url']}', '{$_POST['target']}')    
+    ('{$_POST['title']}', '{$_POST['enable']}', '{$_POST['sort']}', '{$_POST['kind']}', '{$_POST['content']}')    
     "; //die($sql);
     $db->query($sql) or die($db->error() . $sql);
     $sn = $db->insert_id;
-    $msg = "輪播圖資料新增成功";    
+    $msg = "寶貝畫畫資料新增成功";    
 
   }
 
@@ -150,7 +148,7 @@ function op_insert($kind,$sn=""){
 }
 
 /*===========================
-  用sn取得輪播圖檔資料
+  用sn取得寶貝畫畫檔資料
 ===========================*/
 function getKindsBySn($sn){
   global $db,$kind;
@@ -195,8 +193,7 @@ function op_form($kind,$sn=""){
   $row['kind'] = isset($row['kind']) ? $row['kind'] : $kind;
   $row['title'] = isset($row['title']) ? $row['title'] : "";
   $row['enable'] = isset($row['enable']) ? $row['enable'] : "1";
-  $row['url'] = isset($row['url']) ? $row['url'] : "";
-  $row['target'] = isset($row['target']) ? $row['target'] : "0";
+  $row['content'] = isset($row['content']) ? $row['content'] : "";
   $row['sort'] = isset($row['sort']) ? $row['sort'] : getKindMaxSortByKind($kind);
   $row['pic'] = isset($row['pic']) ? $row['pic'] : "";
   
@@ -220,8 +217,7 @@ function op_list($kind){
     $row['sn'] = (int)$row['sn'];//分類
     $row['title'] = htmlspecialchars($row['title']);//標題
     $row['enable'] = (int)$row['enable'];//狀態 
-    $row['url'] = htmlspecialchars($row['url']);//網址
-    $row['target'] = (int)$row['target'];//外連
+    $row['content'] = htmlspecialchars($row['content']);//內容
     $row['pic'] = getFilesByKindColsnSort($kind,$row['sn']);  
     $rows[] = $row;
   }

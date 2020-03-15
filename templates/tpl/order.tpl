@@ -5,7 +5,7 @@
             <th scope="col">日期</th>
             <th scope="col">姓名</th>
             <th scope="col">電話</th>
-            <th scope="col" >桌號</th>
+            <th scope="col">配送方式</th>
             <th scope="col" class="text-right">合計</th>
             <th scope="col" class="text-center">功能</th>
         </tr>
@@ -49,7 +49,7 @@
                 cancelButtonText: '取消'
                 }).then((result) => {
                 if (result.value) {
-                    document.location.href="prod.php?op=op_delete&sn="+sn;
+                    document.location.href="order.php?op=order_delete&sn="+sn;
                 }
             })
         }

@@ -1,4 +1,27 @@
-<div class="container mt-5" style="padding-top: 80px;">
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-03-15 13:02:08
+  from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\reg_form.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5e6e19401cf5e5_07929760',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'cba2abf88f30bc5c229fb96a9cfec1b34786a14a' => 
+    array (
+      0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\reg_form.tpl',
+      1 => 1584273720,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5e6e19401cf5e5_07929760 (Smarty_Internal_Template $_smarty_tpl) {
+?><div class="container mt-5" style="padding-top: 80px;">
     <h1 class="text-center">註冊表單</h1>
     
     <form action="index.php" method="post" id="myForm" class="mb-2" enctype="multipart/form-data">
@@ -55,15 +78,18 @@
 	<!--name是要拿來顯示資料後端的標題-->
   	</form>
 	<!--表單驗證-->
-	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js">
-	</script>
+	<?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js">
+	<?php echo '</script'; ?>
+>
 	<style>
 		.error{
 			color:red;
 		}
 	</style>
 	<!--調用函式-->
-	<script>
+	<?php echo '<script'; ?>
+>
 		//`uname`, `pass`, `name`, `tel`, `email`
 		// $(function(){
 		// });
@@ -128,5 +154,7 @@
 				},
 			})
 		});
-	</script>
-</div>
+	<?php echo '</script'; ?>
+>
+</div><?php }
+}

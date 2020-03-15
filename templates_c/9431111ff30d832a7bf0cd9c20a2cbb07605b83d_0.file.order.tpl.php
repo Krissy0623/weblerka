@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-08 11:49:47
+/* Smarty version 3.1.34-dev-7, created on 2020-03-11 14:48:26
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\order.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e64cdcb6d6797_55235338',
+  'unifunc' => 'content_5e68ec2a93f084_45427537',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9431111ff30d832a7bf0cd9c20a2cbb07605b83d' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\order.tpl',
-      1 => 1583510651,
+      1 => 1583934504,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e64cdcb6d6797_55235338 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e68ec2a93f084_45427537 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['op']->value == "op_list") {?>
     <table class="table table-striped table-bordered table-hover table-sm">
         <thead>
@@ -28,7 +28,7 @@ if ($_smarty_tpl->tpl_vars['op']->value == "op_list") {?>
             <th scope="col">日期</th>
             <th scope="col">姓名</th>
             <th scope="col">電話</th>
-            <th scope="col" >桌號</th>
+            <th scope="col">配送方式</th>
             <th scope="col" class="text-right">合計</th>
             <th scope="col" class="text-center">功能</th>
         </tr>
@@ -94,7 +94,7 @@ class/sweetalert2/sweetalert2.min.js"><?php echo '</script'; ?>
                 cancelButtonText: '取消'
                 }).then((result) => {
                 if (result.value) {
-                    document.location.href="prod.php?op=op_delete&sn="+sn;
+                    document.location.href="order.php?op=order_delete&sn="+sn;
                 }
             })
         }

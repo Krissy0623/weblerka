@@ -162,7 +162,7 @@ function op_list($kind){
   
   $sql = "SELECT *
           FROM `kinds`
-          WHERE `kind`='{$kind}' and `enable`='1'
+          WHERE `kind`='{$kind}'
           ORDER BY `sort` /*用來排序*/
   ";//die($sql);
 

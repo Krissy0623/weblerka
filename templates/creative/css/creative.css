@@ -486,6 +486,7 @@ mark,
 .img-fluid {
   max-width: 100%;
   height: auto;
+  margin-bottom: 1.5rem;
 }
 
 .img-thumbnail {
@@ -606,8 +607,8 @@ pre code {
 
 .no-gutters > .col,
 .no-gutters > [class*="col-"] {
-  padding-right: 0;
-  padding-left: 0;
+  padding-right: 14px;
+  padding-left: 14px;
 }
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
@@ -9706,15 +9707,16 @@ header.masthead h1 {
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 89%;
   position: absolute;
   bottom: 0;
   text-align: center;
   opacity: 0;
   color: #fff;
-  background: rgba(244, 98, 58, 0.9);
+  background: rgba(255, 193, 7, .7);
   transition: opacity 0.25s ease;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 #portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category {

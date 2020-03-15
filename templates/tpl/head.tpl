@@ -7,7 +7,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" style="margin-left: -50px;" href="index.php"><{$WEB.web_title}></a>
+        <a class="navbar-brand js-scroll-trigger" href="index.php"><{$WEB.web_title}></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,6 +18,16 @@
                         <a class="nav-link js-scroll-trigger" href="<{$mainMenu.url}>" <{if $mainMenu.target == 1}>target="_blank" <{/if}>><{$mainMenu.title}></a>
                     </li>
                 <{/foreach}>
+
+                <{* 購物車圖示 *}>  
+                <{if $smarty.session.cartAmount and $op != "order_form"}>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="cart.php?op=order_form">
+                            <i class="fas fa-cart-plus"></i> 
+                        </a>
+                    </li>
+                <{/if}>
+
                 <{if $smarty.session.user.kind === 1}> 
                 <{* 管理員 *}>
                     <li class="nav-item">

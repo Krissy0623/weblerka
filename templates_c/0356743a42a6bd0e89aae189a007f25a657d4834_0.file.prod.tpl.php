@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-08 11:49:45
+/* Smarty version 3.1.34-dev-7, created on 2020-03-15 05:01:08
   from 'D:\Krissy\PHP\xampp\htdocs\weblerka\templates\tpl\prod.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e64cdc9f283b8_49059901',
+  'unifunc' => 'content_5e6da884613a04_74261128',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0356743a42a6bd0e89aae189a007f25a657d4834' => 
     array (
       0 => 'D:\\Krissy\\PHP\\xampp\\htdocs\\weblerka\\templates\\tpl\\prod.tpl',
-      1 => 1583341042,
+      1 => 1584243985,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e64cdc9f283b8_49059901 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6da884613a04_74261128 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['op']->value == "op_list") {?>
         <table class="table table table-bordered table-striped table-hover table-sm">
         <thead>

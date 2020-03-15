@@ -20,12 +20,12 @@ switch ($op){
   case "order_update" :    
     if($_SESSION['user']['kind'] !== 1)redirect_header("index.php", '您沒有權限', 3000);
     $returnUrl = order_insert($sn);
-    redirect_header($returnUrl, "訂單編輯成功", 2000);    
+    redirect_header($_SESSION['returnUrl'], "訂單編輯成功", 2000);    
     exit; 
 
 	case "add_cart" :
 		$msg = add_cart($sn);
-		redirect_header("cart.php", $msg, 2000);
+		redirect_header($_SESSION['returnUrl'], $msg, 2000);
     exit; 
     
 	case "order_form" :
@@ -34,6 +34,7 @@ switch ($op){
 		  
   default:
     $op = "op_list";
+    $_SESSION['returnUrl'] = getCurrentUrl();
     op_list();
     break;  
 }
@@ -126,7 +127,8 @@ function order_insert($sn=""){
   $_POST['ps'] = db_filter($_POST['ps'], '');
   $_POST['uid'] = db_filter($_POST['uid'], '');
   $_POST['date'] = strtotime("now");
-  
+  $_POST['op'] = db_filter($_POST['op'], '');
+
   if($sn){
 
     $sql="UPDATE  `orders_main` SET
@@ -189,12 +191,29 @@ function order_insert($sn=""){
                 WHERE `sn` = '{$sn}'  
   ";
   $db->query($sql) or die($db->error() . $sql);
-  if(!$sn){
+  if($sn){
     unset($_SESSION['cart']);
     unset($_SESSION['cartAmount']);
   }
   return "cart.php?op=order_list&sn={$sn}&key={$_POST['date']}";
 }
+/*---如果要line通知----
+if($_POST['op'] == "order_insert"){
+
+    $lineId = "SFEbsJ00P8k67DA4TI19AUNDRsxofmjNWUEnmjRNVAa";
+
+    send_notify_curl("
+      您有一張訂單-{$sn}
+      合計金額：{$Total} 元
+    ", $lineId);
+
+    unset($_SESSION['cart']);
+    unset($_SESSION['cartAmount']);
+  }
+  return "cart.php?op=order_list&sn={$sn}&key={$_POST['date']}";
+}
+---------------------*/
+
 
 /*===========================
   用sn取得訂單主檔檔資料
@@ -305,3 +324,31 @@ function op_list(){
   }
   $smarty->assign("rows",$rows); 
 }
+
+/*-----line通知----- 
+function send_notify_curl($message, $token) {
+	$curl = curl_init();
+	curl_setopt_array($curl, array(
+	  CURLOPT_URL => "https://notify-api.line.me/api/notify",
+	  CURLOPT_RETURNTRANSFER => true,
+	  CURLOPT_ENCODING => "",
+	  CURLOPT_MAXREDIRS => 10,
+	  CURLOPT_TIMEOUT => 30,
+	  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+	  CURLOPT_CUSTOMREQUEST => "POST",
+	  CURLOPT_POSTFIELDS => http_build_query(array("message" => $message),'','&'),
+	  CURLOPT_HTTPHEADER => array(
+		  "Authorization: Bearer $token",
+		  "Content-Type: application/x-www-form-urlencoded"
+	  ),
+	));
+	$response = curl_exec($curl);
+	$err = curl_error($curl);
+	curl_close($curl);
+	if ($err) {
+	  return "cURL Error #:" . $err;
+	} else {
+	  return $response;
+	}
+}
+----------------------*/
